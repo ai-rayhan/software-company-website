@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSync Technologies — Your Vision, Our Code</title>
+  <meta name="description" content="ShopSync Technologies — Full-service software development company offering web, mobile, AI integration, and custom software solutions." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════ NAVBAR ════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
+      <span class="logo-text">ShopSync<span>.</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:.87rem;">
+        Get Started
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">
+    <i data-lucide="x" style="width:26px;height:26px;stroke:var(--muted);"></i>
+  </button>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#portfolio">Work</a>
+  <a href="#team">Team</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Get Started</a>
+</div>
+
+
+<!-- ══════════════════════ HERO ══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-grid-bg"></div>
+
+  <div class="container hero-inner">
+
+    <!-- Left: copy -->
+    <div class="reveal">
+      <div class="chip">
+        <span class="chip-dot"></span>
+        Now accepting new projects
+      </div>
+
+      <h1 class="hero-title">
+        Your Vision,<br>
+        <span class="g-text">Our Code.</span>
+      </h1>
+
+      <p class="hero-desc">
+        ShopSync Technologies builds world-class software — from AI-powered
+        platforms to enterprise mobile apps. We turn complex problems into
+        elegant, scalable solutions that grow your business.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary">
+          View Our Work
+          <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          Start a Project
+          <i data-lucide="send" style="width:15px;height:15px;"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="h-stat">
+          <span class="h-stat-num" data-target="150" data-suffix="+">0+</span>
+          <span class="h-stat-lbl">Projects</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num" data-target="8" data-suffix="+">0+</span>
+          <span class="h-stat-lbl">Years Exp.</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num" data-target="98" data-suffix="%">0%</span>
+          <span class="h-stat-lbl">Satisfaction</span>
+        </div>
+        <div class="h-stat">
+          <span class="h-stat-num" data-target="40" data-suffix="+">0+</span>
+          <span class="h-stat-lbl">Engineers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Browser mockup -->
+    <div class="hero-visual-wrap reveal" style="transition-delay:.2s;">
+
+      <!-- Floating notifications -->
+      <div class="notif notif-1">
+        <div class="notif-ico"><i data-lucide="check-circle" style="width:16px;height:16px;stroke:white;"></i></div>
+        <div>
+          <strong>Deployment Successful</strong>
+          <span>v2.4.1 is live in production</span>
+        </div>
+      </div>
+
+      <div class="notif notif-2">
+        <div class="notif-ico"><i data-lucide="cpu" style="width:16px;height:16px;stroke:white;"></i></div>
+        <div>
+          <strong>AI Model Active</strong>
+          <span>99.2% accuracy &mdash; 12ms latency</span>
+        </div>
+      </div>
+
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="b-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="b-url">app.shopsynctechnologies.com/dashboard</div>
+        </div>
+        <div class="browser-body">
+
+          <!-- Stats row -->
+          <div class="dash-stats">
+            <div class="dash-stat">
+              <div class="ds-lbl">Monthly Revenue</div>
+              <div class="ds-val">$2.4M</div>
+              <div class="ds-chg">&#8593; 24% vs last month</div>
+            </div>
+            <div class="dash-stat">
+              <div class="ds-lbl">Active Users</div>
+              <div class="ds-val">18.6K</div>
+              <div class="ds-chg">&#8593; 11% growth</div>
+            </div>
+            <div class="dash-stat">
+              <div class="ds-lbl">API Requests</div>
+              <div class="ds-val">4.2B</div>
+              <div class="ds-chg">99.9% uptime</div>
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div class="dash-chart">
+            <div class="d-bar" style="height:35%"></div>
+            <div class="d-bar" style="height:52%"></div>
+            <div class="d-bar" style="height:45%"></div>
+            <div class="d-bar hi" style="height:78%"></div>
+            <div class="d-bar" style="height:60%"></div>
+            <div class="d-bar" style="height:55%"></div>
+            <div class="d-bar hi" style="height:88%"></div>
+            <div class="d-bar" style="height:72%"></div>
+            <div class="d-bar" style="height:65%"></div>
+            <div class="d-bar hi" style="height:95%"></div>
+            <div class="d-bar" style="height:80%"></div>
+            <div class="d-bar" style="height:70%"></div>
+          </div>
+
+          <!-- Code block -->
+          <div class="dash-code">
+            <span class="cc-purple">import</span> <span class="cc-white">&#123; ShopSync &#125;</span> <span class="cc-purple">from</span> <span class="cc-yellow">'@shopsync/ai'</span><br>
+            <br>
+            <span class="cc-blue">const</span> <span class="cc-green">agent</span> <span class="cc-white">=</span> <span class="cc-blue">new</span> <span class="cc-green">ShopSync</span><span class="cc-white">(&#123;</span><br>
+            &nbsp;&nbsp;<span class="cc-white">model:</span> <span class="cc-yellow">'claude-3-5'</span><span class="cc-white">,</span><br>
+            &nbsp;&nbsp;<span class="cc-white">tools:</span> <span class="cc-white">[</span><span class="cc-yellow">'analyze'</span><span class="cc-white">,</span> <span class="cc-yellow">'predict'</span><span class="cc-white">]</span><br>
+            <span class="cc-white">&#125;)</span><br>
+            <br>
+            <span class="cc-gray">// Run AI-powered optimization</span><br>
+            <span class="cc-blue">const</span> <span class="cc-green">result</span> <span class="cc-white">=</span> <span class="cc-purple">await</span> <span class="cc-green">agent</span><span class="cc-white">.</span><span class="cc-blue">run</span><span class="cc-white">(</span><span class="cc-yellow">'optimize'</span><span class="cc-white">)</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════ TRUSTED BY ════════════════════════ -->
+<section id="trusted">
+  <div class="trusted-label">Trusted by teams at leading companies worldwide</div>
+  <div class="logos-track">
+    <div class="logos-marquee">
+      <!-- Set A -->
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span class="logo-name">Microsoft</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span class="logo-name">Shopify</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span class="logo-name">Stripe</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="logo-name">Airbnb</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        <span class="logo-name">Netflix</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+        <span class="logo-name">Slack</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span class="logo-name">Vercel</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <span class="logo-name">Figma</span>
+      </div>
+      <!-- Set B (duplicate for seamless loop) -->
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span class="logo-name">Microsoft</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span class="logo-name">Shopify</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span class="logo-name">Stripe</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="logo-name">Airbnb</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        <span class="logo-name">Netflix</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+        <span class="logo-name">Slack</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span class="logo-name">Vercel</span>
+      </div>
+      <div class="logo-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <span class="logo-name">Figma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ STATS BAND ════════════════════════ -->
+<section id="stats-band">
+  <div class="container">
+    <div class="stats-band-grid">
+      <div class="sb-item reveal">
+        <span class="sb-num" data-target="2400000" data-suffix="+">0+</span>
+        <span class="sb-label">Lines of Code Shipped</span>
+        <span class="sb-sub">Across all client projects, daily</span>
+      </div>
+      <div class="sb-item reveal" style="transition-delay:.1s;">
+        <span class="sb-num" data-target="99" data-suffix=".9%">0%</span>
+        <span class="sb-label">Average Uptime SLA</span>
+        <span class="sb-sub">Maintained across all hosted products</span>
+      </div>
+      <div class="sb-item reveal" style="transition-delay:.2s;">
+        <span class="sb-num" data-target="30" data-suffix="+">0+</span>
+        <span class="sb-label">Countries Served</span>
+        <span class="sb-sub">Global client base, growing every month</span>
+      </div>
+      <div class="sb-item reveal" style="transition-delay:.05s;">
+        <span class="sb-num" data-target="4" data-suffix=".8&#9733;">0</span>
+        <span class="sb-label">Average App Store Rating</span>
+        <span class="sb-sub">Across all mobile products we&rsquo;ve shipped</span>
+      </div>
+      <div class="sb-item reveal" style="transition-delay:.15s;">
+        <span class="sb-num" data-target="68" data-suffix="%">0%</span>
+        <span class="sb-label">Avg. Support Ticket Drop</span>
+        <span class="sb-sub">After AI integration deployment</span>
+      </div>
+      <div class="sb-item reveal" style="transition-delay:.25s;">
+        <span class="sb-num">$0</span>
+        <span class="sb-label">Hidden Fees</span>
+        <span class="sb-sub">Transparent pricing on every project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ ABOUT ══════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container about-grid">
+
+    <div class="about-visual reveal">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=85&auto=format&fit=crop" alt="ShopSync team collaborating" />
+      </div>
+      <div class="about-float">
+        <div class="num" data-target="8" data-suffix="+">8+</div>
+        <div class="lbl">Years building<br>digital products</div>
+      </div>
+    </div>
+
+    <div class="about-content reveal" style="transition-delay:.15s;">
+      <div class="chip"><span class="chip-dot"></span>Who We Are</div>
+      <h2>Engineering Excellence,<br><span class="g-text">Delivered at Scale</span></h2>
+      <p>ShopSync Technologies is a full-service software development company with a proven track record of building high-performance digital products for startups and enterprises across 30+ countries.</p>
+      <p>We combine strategic thinking with technical precision — from architecture and design to deployment and AI integration — to deliver software that truly moves the needle.</p>
+
+      <div class="values-grid">
+        <div class="value-row">
+          <div class="val-ico"><i data-lucide="zap" style="width:17px;height:17px;stroke:white;"></i></div>
+          <div class="val-txt">
+            <strong>Performance-First Engineering</strong>
+            <span>Every system is architected to scale from day one</span>
+          </div>
+        </div>
+        <div class="value-row">
+          <div class="val-ico"><i data-lucide="shield" style="width:17px;height:17px;stroke:white;"></i></div>
+          <div class="val-txt">
+            <strong>Security by Design</strong>
+            <span>Enterprise-grade practices embedded at every layer</span>
+          </div>
+        </div>
+        <div class="value-row">
+          <div class="val-ico"><i data-lucide="users" style="width:17px;height:17px;stroke:white;"></i></div>
+          <div class="val-txt">
+            <strong>Collaborative Partnership</strong>
+            <span>We work as an extension of your team, not a vendor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════ MISSION & VISION ══════════════════ -->
+<section id="mission-vision" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Our Foundation</div>
+      <h2>Mission &amp; <span class="g-text">Vision</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="mv-grid">
+
+      <!-- Mission Card -->
+      <div class="mv-mission reveal">
+        <div class="mv-mission-inner">
+          <div class="mv-icon">
+            <i data-lucide="target" style="width:26px;height:26px;stroke:white;"></i>
+          </div>
+          <span class="mv-subtitle">Our Mission</span>
+          <h3>Turning Complex Ideas Into <span class="g-text">Elegant Software</span></h3>
+          <p>We exist to bridge the gap between visionary ideas and real-world digital solutions. Our mission is to empower businesses — from ambitious startups to global enterprises — with software that is fast, secure, scalable, and beautiful.</p>
+          <div class="mv-pillars">
+            <div class="mv-pillar">
+              <i data-lucide="zap" style="width:20px;height:20px;stroke:var(--g1);"></i>
+              <span>Speed Without Compromise</span>
+            </div>
+            <div class="mv-pillar">
+              <i data-lucide="shield-check" style="width:20px;height:20px;stroke:var(--g2);"></i>
+              <span>Security by Default</span>
+            </div>
+            <div class="mv-pillar">
+              <i data-lucide="layers" style="width:20px;height:20px;stroke:var(--g3);"></i>
+              <span>Scalable Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="mv-vision reveal" style="transition-delay:.18s;">
+        <div class="mv-vision-inner">
+          <div class="mv-v-label">
+            <span class="mv-v-dot"></span>Our Vision
+          </div>
+          <h3>A World Where Great <span class="g-text">Software is Accessible</span> to All</h3>
+          <p class="mv-quote">We envision a future where every organization — regardless of size or budget — can access world-class software development. Through AI-augmented engineering and transparent partnerships, we're making that future real.</p>
+        </div>
+        <div class="mv-vision-bottom">
+          <div class="mv-v-stats">
+            <div class="mv-v-stat">
+              <span class="mv-v-num" data-target="200" data-suffix="+">200+</span>
+              <span class="mv-v-lbl">Projects Shipped</span>
+            </div>
+            <div class="mv-v-stat">
+              <span class="mv-v-num" data-target="30" data-suffix="+">30+</span>
+              <span class="mv-v-lbl">Countries Served</span>
+            </div>
+            <div class="mv-v-stat">
+              <span class="mv-v-num" data-target="98" data-suffix="%">98%</span>
+              <span class="mv-v-lbl">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ SERVICES ══════════════════════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>What We Build</div>
+      <h2>End-to-End <span class="g-text">Software Services</span></h2>
+      <div class="divider"></div>
+      <p>From first sketch to live product — we cover every dimension of modern software development.</p>
+    </div>
+
+    <div class="services-bento">
+
+      <!-- WEB — hero card, 2×2 -->
+      <div class="svc-card svc-web reveal">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=1400&q=85&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">01</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div class="svc-cat">
+            <i data-lucide="globe" style="width:11px;height:11px;"></i>
+            Web Development
+          </div>
+          <h3>Blazing-fast web apps that convert visitors into customers</h3>
+          <p>Fully responsive, SEO-optimised web applications built with modern frameworks. From marketing sites to complex multi-tenant platforms.</p>
+          <div class="svc-pills">
+            <span class="svc-pill">React</span>
+            <span class="svc-pill">Next.js</span>
+            <span class="svc-pill">Node.js</span>
+            <span class="svc-pill">TypeScript</span>
+            <span class="svc-pill">GraphQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI — col 3, row 1 -->
+      <div class="svc-card svc-ai reveal" style="transition-delay:.1s;">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=85&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">03</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div class="svc-cat">
+            <i data-lucide="cpu" style="width:11px;height:11px;"></i>
+            AI &amp; ML
+          </div>
+          <h3>Intelligent AI integration &amp; solutions</h3>
+          <p>LLMs, computer vision, RAG pipelines and predictive analytics embedded into your products.</p>
+          <div class="svc-pills">
+            <span class="svc-pill">GPT-4</span>
+            <span class="svc-pill">Claude AI</span>
+            <span class="svc-pill">LangChain</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE — col 3, row 2 -->
+      <div class="svc-card svc-mob reveal" style="transition-delay:.15s;">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&q=85&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">02</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div class="svc-cat">
+            <i data-lucide="smartphone" style="width:11px;height:11px;"></i>
+            Mobile Apps
+          </div>
+          <h3>iOS &amp; Android apps users love</h3>
+          <p>Native and cross-platform mobile experiences built for speed and reliability.</p>
+          <div class="svc-pills">
+            <span class="svc-pill">React Native</span>
+            <span class="svc-pill">Flutter</span>
+            <span class="svc-pill">Swift</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOM — col 1, row 3 -->
+      <div class="svc-card svc-cust reveal" style="transition-delay:.05s;">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=85&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">04</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div class="svc-cat">
+            <i data-lucide="code-2" style="width:11px;height:11px;"></i>
+            Custom Software
+          </div>
+          <h3>Bespoke software built for your workflows</h3>
+          <p>SaaS platforms, ERPs, CRMs and APIs tailored to your exact business logic.</p>
+          <div class="svc-pills">
+            <span class="svc-pill">SaaS</span>
+            <span class="svc-pill">ERP</span>
+            <span class="svc-pill">API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI/UX — cols 2-3, row 3 -->
+      <div class="svc-card svc-uiux reveal" style="transition-delay:.1s;">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&q=85&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">05</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div class="svc-cat">
+            <i data-lucide="pen-tool" style="width:11px;height:11px;"></i>
+            UI/UX Design
+          </div>
+          <h3>Pixel-perfect design systems that convert</h3>
+          <p>Research-driven design systems and interfaces that turn visitors into loyal customers.</p>
+          <div class="svc-pills">
+            <span class="svc-pill">Figma</span>
+            <span class="svc-pill">Design Systems</span>
+            <span class="svc-pill">Prototyping</span>
+            <span class="svc-pill">User Research</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOUD — full width, row 4 -->
+      <div class="svc-card svc-cloud reveal" style="transition-delay:.15s;">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=85&auto=format&fit=crop'); background-position: center 60%;"></div>
+        <div class="svc-overlay"></div>
+        <span class="svc-num">06</span>
+        <div class="svc-arrow">
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;stroke:white;"></i>
+        </div>
+        <div class="svc-content">
+          <div>
+            <div class="svc-cat">
+              <i data-lucide="cloud" style="width:11px;height:11px;"></i>
+              Cloud &amp; DevOps
+            </div>
+            <h3>Scalable cloud infrastructure &amp; CI/CD pipelines</h3>
+            <p>Automated deployments, container orchestration, and monitoring that keep your systems always-on at any scale.</p>
+          </div>
+          <div class="svc-cloud-right">
+            <div class="cloud-pill">
+              <i data-lucide="check" style="width:15px;height:15px;stroke:var(--g1);"></i> AWS / GCP / Azure
+            </div>
+            <div class="cloud-pill">
+              <i data-lucide="check" style="width:15px;height:15px;stroke:var(--g1);"></i> Docker &amp; Kubernetes
+            </div>
+            <div class="cloud-pill">
+              <i data-lucide="check" style="width:15px;height:15px;stroke:var(--g1);"></i> 99.9% SLA Uptime
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ PROCESS ════════════════════════════ -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>How We Work</div>
+      <h2>A Process Built for <span class="g-text">Results</span></h2>
+      <div class="divider"></div>
+      <p>Four focused phases — from concept to live product, on time and on budget.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="proc-step reveal">
+        <div class="proc-num"><span>01</span></div>
+        <h4>Discovery &amp; Strategy</h4>
+        <p>We map your goals, users, and technical requirements into a clear, actionable roadmap before writing a single line of code.</p>
+      </div>
+      <div class="proc-step reveal" style="transition-delay:.15s;">
+        <div class="proc-num"><span>02</span></div>
+        <h4>Design &amp; Prototype</h4>
+        <p>Interactive wireframes and polished UI designs validated with real user feedback. You see exactly what you're getting before development starts.</p>
+      </div>
+      <div class="proc-step reveal" style="transition-delay:.3s;">
+        <div class="proc-num"><span>03</span></div>
+        <h4>Build &amp; Iterate</h4>
+        <p>Agile sprints with weekly demos. You see live progress, give feedback, and stay in control throughout the entire build.</p>
+      </div>
+      <div class="proc-step reveal" style="transition-delay:.45s;">
+        <div class="proc-num"><span>04</span></div>
+        <h4>Launch &amp; Scale</h4>
+        <p>Seamless deployment with performance monitoring, security hardening, and ongoing support to grow your product confidently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ PORTFOLIO ══════════════════════════ -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Our Work</div>
+      <h2>Selected <span class="g-text">Projects</span></h2>
+      <div class="divider"></div>
+      <p>A curated selection of products we have designed, built, and scaled for clients worldwide.</p>
+    </div>
+
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="saas">SaaS</button>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80&auto=format&fit=crop" alt="E-commerce platform" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Web Development</div>
+          <h3>NexCart E-Commerce Platform</h3>
+          <p>Full-stack marketplace with real-time inventory, Stripe payments, and merchant analytics.</p>
+        </div>
+      </div>
+
+      <div class="port-card reveal" data-cat="ai" style="transition-delay:.1s;">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80&auto=format&fit=crop" alt="AI assistant" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">AI Solution</div>
+          <h3>IntelliSupport AI Assistant</h3>
+          <p>LLM-powered support bot with RAG architecture — reduced support tickets by 68%.</p>
+        </div>
+      </div>
+
+      <div class="port-card reveal" data-cat="mobile" style="transition-delay:.2s;">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80&auto=format&fit=crop" alt="Mobile app" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Mobile App</div>
+          <h3>FitFlow Health Tracker</h3>
+          <p>React Native fitness app with wearable integration — 250K+ downloads on iOS &amp; Android.</p>
+        </div>
+      </div>
+
+      <div class="port-card reveal" data-cat="saas">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&auto=format&fit=crop" alt="SaaS analytics" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">SaaS Platform</div>
+          <h3>DataPulse Analytics</h3>
+          <p>Real-time business intelligence SaaS with custom dashboards, used by 500+ companies.</p>
+        </div>
+      </div>
+
+      <div class="port-card reveal" data-cat="web" style="transition-delay:.1s;">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=700&q=80&auto=format&fit=crop" alt="Healthcare portal" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Web Development</div>
+          <h3>MediConnect Patient Portal</h3>
+          <p>HIPAA-compliant healthcare portal with telemedicine and EHR integration.</p>
+        </div>
+      </div>
+
+      <div class="port-card reveal" data-cat="ai" style="transition-delay:.2s;">
+        <div class="port-img">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=80&auto=format&fit=crop" alt="Computer vision" />
+          <div class="port-overlay">
+            <span class="port-link"><i data-lucide="external-link" style="width:15px;height:15px;"></i>View Case Study</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">AI Solution</div>
+          <h3>VisionGuard Quality Control</h3>
+          <p>Computer vision defect detection in manufacturing — 99.2% accuracy in production.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ CASE STUDY ════════════════════════ -->
+<section id="casestudy" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Featured Case Study</div>
+      <h2>How We Cut Support Costs by <span class="g-text">68% with AI</span></h2>
+      <div class="divider"></div>
+      <p>A deep-dive into how we transformed Horizon SaaS&rsquo;s customer support operation in 12 weeks.</p>
+    </div>
+
+    <div class="cs-card reveal">
+
+      <div class="cs-img-side">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=85&auto=format&fit=crop" alt="IntelliSupport AI case study" />
+        <div class="cs-img-overlay"></div>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <span class="cs-m-val" data-target="68" data-suffix="%">0%</span>
+            <span class="cs-m-lbl">Ticket Reduction</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-m-val">12wk</span>
+            <span class="cs-m-lbl">Build Time</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-m-val">$180K</span>
+            <span class="cs-m-lbl">Annual Saving</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-content-side">
+        <div class="cs-client-row">
+          <div class="cs-client-ico">
+            <i data-lucide="cpu" style="width:20px;height:20px;stroke:white;"></i>
+          </div>
+          <div>
+            <div class="cs-client-name">Horizon SaaS</div>
+            <div class="cs-client-type">B2B SaaS Platform &mdash; 18,000 active users</div>
+          </div>
+        </div>
+
+        <h3>From 2,000 daily tickets to an AI that handles it all</h3>
+
+        <div class="cs-points">
+          <div class="cs-point">
+            <div class="cs-point-ico"><i data-lucide="alert-triangle" style="width:11px;height:11px;stroke:var(--g1);"></i></div>
+            <span><strong style="color:var(--text);">The Problem:</strong> Horizon&rsquo;s support team was buried under 2,000+ tickets per day. Response times hit 48 hours, churn spiked to 12%, and hiring more agents wasn&rsquo;t sustainable.</span>
+          </div>
+          <div class="cs-point">
+            <div class="cs-point-ico"><i data-lucide="lightbulb" style="width:11px;height:11px;stroke:var(--g1);"></i></div>
+            <span><strong style="color:var(--text);">Our Solution:</strong> We built a RAG-powered AI assistant trained on their entire knowledge base, API docs, and historical support threads — integrated directly into their support widget.</span>
+          </div>
+          <div class="cs-point">
+            <div class="cs-point-ico"><i data-lucide="trending-up" style="width:11px;height:11px;stroke:var(--g1);"></i></div>
+            <span><strong style="color:var(--text);">The Result:</strong> 68% of tickets resolved autonomously, average response time dropped from 48h to 4 seconds, and the team saved $180K per year in support costs.</span>
+          </div>
+          <div class="cs-point">
+            <div class="cs-point-ico"><i data-lucide="star" style="width:11px;height:11px;stroke:var(--g1);"></i></div>
+            <span><strong style="color:var(--text);">CSAT Score:</strong> Jumped from 3.2 to 4.9 out of 5 — customers preferred the AI response speed over waiting for a human agent.</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary" style="align-self:flex-start;">
+          Start a Similar Project
+          <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ TECH STACK ════════════════════════ -->
+<section id="techstack" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Our Arsenal</div>
+      <h2>Technologies We <span class="g-text">Master</span></h2>
+      <div class="divider"></div>
+      <p>We work with the best tools across every layer of the modern stack — from frontend to AI to cloud infrastructure.</p>
+    </div>
+
+    <div class="tech-slider-wrap reveal">
+      <div class="tech-slider-viewport">
+        <div class="tech-slider-track" id="techSliderTrack">
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(97,218,251,.1);border-color:rgba(97,218,251,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+            </div>
+            <span class="ts-name">React</span>
+            <span class="ts-cat">Frontend</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+            </div>
+            <span class="ts-name">Next.js</span>
+            <span class="ts-cat">Frontend</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(49,120,198,.12);border-color:rgba(49,120,198,.28);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" />
+            </div>
+            <span class="ts-name">TypeScript</span>
+            <span class="ts-cat">Frontend</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(104,160,99,.1);border-color:rgba(104,160,99,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            </div>
+            <span class="ts-name">Node.js</span>
+            <span class="ts-cat">Backend</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(55,118,171,.1);border-color:rgba(55,118,171,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+            </div>
+            <span class="ts-name">Python</span>
+            <span class="ts-cat">Backend</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(66,165,245,.1);border-color:rgba(66,165,245,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" />
+            </div>
+            <span class="ts-name">Flutter</span>
+            <span class="ts-cat">Mobile</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(255,153,0,.1);border-color:rgba(255,153,0,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" />
+            </div>
+            <span class="ts-name">AWS</span>
+            <span class="ts-cat">Cloud</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(13,183,237,.1);border-color:rgba(13,183,237,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+            </div>
+            <span class="ts-name">Docker</span>
+            <span class="ts-cat">Cloud</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(50,108,229,.1);border-color:rgba(50,108,229,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" />
+            </div>
+            <span class="ts-name">Kubernetes</span>
+            <span class="ts-cat">Cloud</span>
+          </div>
+
+          <div class="tech-slide">
+            <div class="ts-logo-wrap" style="background:rgba(51,103,145,.1);border-color:rgba(51,103,145,.25);">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+            </div>
+            <span class="ts-name">PostgreSQL</span>
+            <span class="ts-cat">Database</span>
+          </div>
+
+        </div><!-- /tech-slider-track -->
+      </div><!-- /tech-slider-viewport -->
+
+      <div class="slider-controls">
+        <button class="slider-btn" id="tsPrev" aria-label="Previous">
+          <i data-lucide="chevron-left" style="width:20px;height:20px;"></i>
+        </button>
+        <div class="slider-dots" id="tsDots"></div>
+        <button class="slider-btn" id="tsNext" aria-label="Next">
+          <i data-lucide="chevron-right" style="width:20px;height:20px;"></i>
+        </button>
+      </div>
+    </div><!-- /tech-slider-wrap -->
+
+    <!-- keep empty div placeholder so old references don't break -->
+    <div class="tech-grid" style="display:none;">
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ TEAM (commented out) ═══════════════ -->
+<!--
+<section id="team" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>The People</div>
+      <h2>Meet the <span class="g-text">Team</span></h2>
+      <div class="divider"></div>
+      <p>Talented engineers, designers, and strategists united by a passion for great software.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal"><div class="team-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="CEO" /></div><div class="team-body"><h4>James Harrington</h4><span>Chief Executive Officer</span></div></div>
+      <div class="team-card reveal"><div class="team-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop" alt="CTO" /></div><div class="team-body"><h4>Sophia Chen</h4><span>Chief Technology Officer</span></div></div>
+      <div class="team-card reveal"><div class="team-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop" alt="Design" /></div><div class="team-body"><h4>Marcus Webb</h4><span>Head of Design</span></div></div>
+      <div class="team-card reveal"><div class="team-img"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop" alt="AI Lead" /></div><div class="team-body"><h4>Aisha Patel</h4><span>Lead AI Engineer</span></div></div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ══════════════════════ TESTIMONIALS (commented out) ══════ -->
+<!--
+<section id="testimonials" class="section">
+  <div class="container"><div class="sec-head reveal"><div class="chip"><span class="chip-dot"></span>Client Stories</div><h2>What Our <span class="g-text">Clients Say</span></h2><div class="divider"></div></div></div>
+  <div class="t-track"><div class="t-marquee"></div></div>
+</section>
+-->
+
+
+<!-- ══════════════════════ BLOG ═══════════════════════════════ -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Insights</div>
+      <h2>From the <span class="g-text">Blog</span></h2>
+      <div class="divider"></div>
+      <p>Practical articles on engineering, AI, and building great software products.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card reveal">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=700&q=80&auto=format&fit=crop" alt="AI development" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">AI &amp; ML</span>
+            <span>&#8226;</span><span>May 18, 2025</span>
+            <span>&#8226;</span><span>8 min read</span>
+          </div>
+          <h3>How We Use RAG Architecture to Build Context-Aware AI Products</h3>
+          <p>A deep dive into retrieval-augmented generation — grounding LLMs in your proprietary data to eliminate hallucinations.</p>
+          <a href="#" class="blog-link">
+            Read Article <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" style="transition-delay:.15s;">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=700&q=80&auto=format&fit=crop" alt="React performance" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Engineering</span>
+            <span>&#8226;</span><span>May 10, 2025</span>
+            <span>&#8226;</span><span>6 min read</span>
+          </div>
+          <h3>10 React Performance Patterns We Use on Every Production Build</h3>
+          <p>Memoization, virtualization, lazy loading — the concrete patterns that keep large React apps fast at scale.</p>
+          <a href="#" class="blog-link">
+            Read Article <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" style="transition-delay:.3s;">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop" alt="SaaS architecture" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Architecture</span>
+            <span>&#8226;</span><span>Apr 28, 2025</span>
+            <span>&#8226;</span><span>10 min read</span>
+          </div>
+          <h3>Designing Multi-Tenant SaaS Architecture That Actually Scales</h3>
+          <p>Tenant isolation, data partitioning, and autoscaling — the decisions that let SaaS products grow without rewrites.</p>
+          <a href="#" class="blog-link">
+            Read Article <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ FAQ ════════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-layout">
+
+      <div class="reveal">
+        <div class="chip"><span class="chip-dot"></span>FAQ</div>
+        <h3>Questions we<br>get asked <span class="g-text">a lot</span></h3>
+        <p>Can&rsquo;t find what you&rsquo;re looking for? Drop us a message and we&rsquo;ll get back to you within 24 hours.</p>
+        <a href="#contact" class="btn btn-primary">
+          Ask Us Anything
+          <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+        </a>
+      </div>
+
+      <div class="faq-list reveal" style="transition-delay:.15s;">
+
+        <div class="faq-item open">
+          <div class="faq-q">
+            How long does a typical project take?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">It depends on scope. A marketing website takes 3&ndash;6 weeks. A full-featured SaaS platform typically runs 12&ndash;20 weeks. We always provide a detailed timeline during the discovery phase so you know exactly what to expect before we start building.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            What does your development process look like?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">We work in two-week agile sprints. Each sprint ends with a live demo so you can see real progress, give feedback, and steer the direction. You&rsquo;re never left wondering what we&rsquo;re working on — we use shared project boards and weekly video calls throughout the build.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Do you offer post-launch support and maintenance?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">Yes. All projects come with a 30-day free bug-fix warranty after launch. Beyond that, we offer flexible monthly retainers for ongoing support, feature development, performance monitoring, and security updates. Many clients keep us on retainer long-term as their dedicated engineering team.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            How do you price your projects?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">We offer fixed-price project quotes for well-defined scopes, and time-and-materials contracts for exploratory or evolving work. There are no hidden fees. After an initial discovery call, we provide a transparent breakdown before you commit to anything.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Will we own all the code and IP after the project?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">Absolutely. Upon final payment, you receive full ownership of all source code, assets, and intellectual property. We hand over everything — repositories, design files, deployment configurations, and documentation. There are no licensing restrictions or lock-ins.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Can you work with our existing codebase or team?
+            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          </div>
+          <div class="faq-ans">Yes. We regularly integrate with existing engineering teams as an extension, take over legacy codebases, or pick up mid-project work. We begin every engagement with a thorough code audit so we understand exactly what we&rsquo;re building on before we touch anything.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ CTA ════════════════════════════════ -->
+<section id="cta" class="section">
+  <div class="container reveal">
+    <div class="chip" style="margin-bottom:28px;">
+      <span class="chip-dot"></span>
+      Let's Build Something
+    </div>
+    <h2>Ready to Turn Your<br><span class="g-text">Vision into Reality?</span></h2>
+    <p>Tell us about your project and we'll respond within 24 hours with a clear plan of action.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-primary">
+        Start a Project
+        <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+      </a>
+      <a href="#portfolio" class="btn btn-ghost">
+        View Our Work
+        <i data-lucide="briefcase" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ CONTACT ════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Get In Touch</div>
+      <h2>Start Your <span class="g-text">Project Today</span></h2>
+      <div class="divider"></div>
+      <p>Drop us a message and our team will respond within one business day.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="reveal">
+        <h3>We'd love to hear<br>from you.</h3>
+        <p>Whether you have a fully scoped project or just a rough idea, reach out — we'll help you figure out the right path forward.</p>
+
+        <div class="c-items">
+          <div class="c-item">
+            <div class="c-ico"><i data-lucide="map-pin" style="width:18px;height:18px;stroke:var(--g1);"></i></div>
+            <div class="c-txt">
+              <strong>Office</strong>
+              <span>Moulvibazar, Sylhet, Bangladesh</span>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i data-lucide="mail" style="width:18px;height:18px;stroke:var(--g1);"></i></div>
+            <div class="c-txt">
+              <strong>Email</strong>
+              <span>admin@shopsynctech.com</span>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i data-lucide="phone" style="width:18px;height:18px;stroke:var(--g1);"></i></div>
+            <div class="c-txt">
+              <strong>Phone</strong>
+              <span>+880 1719-272845</span>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i data-lucide="clock" style="width:18px;height:18px;stroke:var(--g1);"></i></div>
+            <div class="c-txt">
+              <strong>Hours</strong>
+              <span>Sat &ndash; Thu, 9:00 AM &ndash; 6:00 PM BST</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://web.facebook.com/shopsynctech" target="_blank" rel="noopener" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:admin@shopsynctech.com" class="soc-link"><i data-lucide="mail" style="width:17px;height:17px;"></i></a>
+          <a href="tel:+8801719272845" class="soc-link"><i data-lucide="phone" style="width:17px;height:17px;"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal" style="transition-delay:.2s;">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="James" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Harrington" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="james@company.com" required />
+          </div>
+          <div class="form-group">
+            <label>Service</label>
+            <select>
+              <option value="">Select a service&hellip;</option>
+              <option>Web Development</option>
+              <option>Mobile App Development</option>
+              <option>AI Integration &amp; Solutions</option>
+              <option>Custom Software Development</option>
+              <option>UI/UX Design</option>
+              <option>Cloud &amp; DevOps</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Project Budget</label>
+            <select>
+              <option value="">Select budget range&hellip;</option>
+              <option>Under $10,000</option>
+              <option>$10,000 &ndash; $25,000</option>
+              <option>$25,000 &ndash; $50,000</option>
+              <option>$50,000 &ndash; $100,000</option>
+              <option>$100,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project</label>
+            <textarea placeholder="Describe your project, goals, and timeline&hellip;" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            Send Message
+            <i data-lucide="send" style="width:17px;height:17px;"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ FOOTER ════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+
+    <!-- Footer top strip -->
+    <div class="footer-top-strip">
+      <div class="fts-left">
+        <span class="fts-tag">Ready to Build Something Great?</span>
+        <h3>Let's turn your <span class="g-text">idea into reality</span></h3>
+      </div>
+      <a href="#contact" class="btn btn-primary">
+        Start a Project
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
+
+    <div class="footer-divider-line"></div>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="display:inline-flex;">
+          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
+          <span class="logo-text">ShopSync<span>.</span></span>
+        </a>
+        <p>Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.</p>
+        <div class="social-row">
+          <a href="https://web.facebook.com/shopsynctech" target="_blank" rel="noopener" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:admin@shopsynctech.com" class="soc-link"><i data-lucide="mail" style="width:17px;height:17px;"></i></a>
+          <a href="tel:+8801719272845" class="soc-link"><i data-lucide="phone" style="width:17px;height:17px;"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">AI Integration</a></li>
+          <li><a href="#services">Custom Software</a></li>
+          <li><a href="#services">UI/UX Design</a></li>
+          <li><a href="#services">Cloud &amp; DevOps</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="https://egalee.com/" target="_blank" rel="noopener">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a></li>
+          <li><a href="tel:+8801719272845">+880 1719-272845</a></li>
+          <li><a href="#contact">Start a Project</a></li>
+          <li><a href="#contact">Schedule a Call</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>ShopSync Technologies</span>. All rights reserved.</p>
+      <p><a href="privacy-policy.html" style="color:rgba(255,255,255,.45);transition:.25s;" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="terms-of-service.html" style="color:rgba(255,255,255,.45);transition:.25s;" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

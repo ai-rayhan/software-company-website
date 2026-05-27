@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ShopSync Technologies</title>
+  <meta name="description" content="Privacy Policy for ShopSync Technologies — how we collect, use, and protect your personal data." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Legal page layout ── */
+    .legal-hero {
+      background: linear-gradient(135deg, var(--bg2) 0%, rgba(249,115,22,.06) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 140px 0 72px;
+      position: relative; overflow: hidden;
+    }
+    .legal-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(249,115,22,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249,115,22,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .legal-hero-inner { position: relative; z-index: 1; }
+    .legal-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(249,115,22,.08); border: 1px solid var(--border-h);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--g1); margin-bottom: 20px;
+    }
+    .legal-hero h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700; letter-spacing: -.03em; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .legal-meta {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      font-size: .84rem; color: var(--muted);
+    }
+    .legal-meta span { display: flex; align-items: center; gap: 6px; }
+    .legal-meta svg { width: 14px; height: 14px; stroke: var(--g1); }
+
+    .legal-layout {
+      display: grid; grid-template-columns: 240px 1fr;
+      gap: 56px; align-items: start;
+      padding: 72px 0 100px;
+    }
+
+    /* Sticky sidebar TOC */
+    .legal-toc {
+      position: sticky; top: 100px;
+    }
+    .legal-toc h4 {
+      font-family: var(--ff-head); font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--g1);
+      margin-bottom: 16px;
+    }
+    .legal-toc ul { display: flex; flex-direction: column; gap: 4px; }
+    .legal-toc ul li a {
+      display: block; font-size: .84rem; color: var(--muted);
+      padding: 7px 12px; border-radius: 8px; border-left: 2px solid transparent;
+      transition: all .25s ease;
+    }
+    .legal-toc ul li a:hover {
+      color: var(--g1); background: rgba(249,115,22,.06);
+      border-left-color: var(--g1); padding-left: 16px;
+    }
+
+    /* Content */
+    .legal-content { min-width: 0; }
+    .legal-section {
+      padding-bottom: 48px; margin-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    .legal-section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--g2), var(--g1));
+      font-family: var(--ff-head); font-size: .78rem; font-weight: 700; color: white;
+      margin-bottom: 14px; flex-shrink: 0;
+    }
+    .legal-section h2 {
+      font-family: var(--ff-head); font-size: 1.35rem; font-weight: 700;
+      letter-spacing: -.02em; margin-bottom: 16px; color: var(--text);
+    }
+    .legal-section p {
+      font-size: .95rem; color: var(--text2); line-height: 1.85; margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      margin: 14px 0;
+    }
+    .legal-section ul li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .93rem; color: var(--text2); line-height: 1.75;
+    }
+    .legal-section ul li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--g1); flex-shrink: 0; margin-top: 9px;
+    }
+    .legal-section strong { color: var(--text); font-weight: 600; }
+    .legal-section a { color: var(--g1); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-section a:hover { color: var(--g2); }
+
+    .legal-contact-box {
+      background: linear-gradient(135deg, rgba(249,115,22,.06), rgba(234,88,12,.04));
+      border: 1px solid var(--border-h); border-radius: 16px;
+      padding: 28px 32px; margin-top: 16px;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .legal-contact-box .lcb-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--g2), var(--g1));
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .legal-contact-box .lcb-icon svg { width: 22px; height: 22px; stroke: white; }
+    .legal-contact-box p { margin: 0; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { display: none; }
+    }
+    @media (max-width: 600px) {
+      .legal-hero { padding: 120px 0 52px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
+      <span class="logo-text">ShopSync<span>.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Work</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="index.html#contact" class="btn btn-primary" style="padding:10px 22px;font-size:.87rem;">
+        Get Started
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">
+    <i data-lucide="x" style="width:26px;height:26px;stroke:var(--muted);"></i>
+  </button>
+  <a href="index.html#about">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#portfolio">Work</a>
+  <a href="index.html#blog">Blog</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+</div>
+
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="container legal-hero-inner">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);margin-bottom:20px;transition:color .25s;">
+      <i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Back to Home
+    </a>
+    <div class="legal-badge">
+      <i data-lucide="shield" style="width:12px;height:12px;"></i>
+      Legal
+    </div>
+    <h1>Privacy <span class="g-text">Policy</span></h1>
+    <div class="legal-meta">
+      <span>
+        <i data-lucide="calendar" style="width:14px;height:14px;stroke:var(--g1);"></i>
+        Last Updated: April 24, 2026
+      </span>
+      <span>
+        <i data-lucide="map-pin" style="width:14px;height:14px;stroke:var(--g1);"></i>
+        Moulvibazar, Sylhet, Bangladesh
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="legal-layout">
+
+    <!-- Sidebar TOC -->
+    <aside class="legal-toc">
+      <h4>Contents</h4>
+      <ul>
+        <li><a href="#intro">1. Introduction</a></li>
+        <li><a href="#data-collect">2. Data We Collect</a></li>
+        <li><a href="#data-use">3. How We Use Your Data</a></li>
+        <li><a href="#security">4. Security of Data</a></li>
+        <li><a href="#contact">5. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="legal-content">
+
+      <div class="legal-section" id="intro">
+        <div class="legal-section-num">1</div>
+        <h2>Introduction</h2>
+        <p>At ShopSync Technologies ("we," "our," or "us"), based in Moulvibazar, Sylhet, Bangladesh, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our applications.</p>
+        <p>By using our services, you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices.</p>
+      </div>
+
+      <div class="legal-section" id="data-collect">
+        <div class="legal-section-num">2</div>
+        <h2>Data We Collect</h2>
+        <p>We may collect several types of information from and about users of our services, including:</p>
+        <ul>
+          <li><strong>Personal Identification:</strong> Name, email address, and phone number when provided voluntarily.</li>
+          <li><strong>Usage Data:</strong> Information about how you use our website and apps, including pages visited and time spent.</li>
+          <li><strong>Device Information:</strong> IP address, browser type, and operating system to improve compatibility and security.</li>
+        </ul>
+        <p>We only collect information that is necessary to provide and improve our services. We do not sell or share your personal data with third parties for marketing purposes.</p>
+      </div>
+
+      <div class="legal-section" id="data-use">
+        <div class="legal-section-num">3</div>
+        <h2>How We Use Your Data</h2>
+        <p>We use your information to:</p>
+        <ul>
+          <li>Provide and maintain our services.</li>
+          <li>Notify you about changes to our services.</li>
+          <li>Provide customer support and respond to inquiries.</li>
+          <li>Gather analysis or valuable information to improve our services.</li>
+        </ul>
+        <p>We will not use your personal information for any purpose other than those stated above without your explicit consent.</p>
+      </div>
+
+      <div class="legal-section" id="security">
+        <div class="legal-section-num">4</div>
+        <h2>Security of Data</h2>
+        <p>The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+        <p>We implement appropriate technical and organizational measures to protect your data against unauthorized access, alteration, disclosure, or destruction.</p>
+      </div>
+
+      <div class="legal-section" id="contact">
+        <div class="legal-section-num">5</div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how we handle your data, please reach out to us:</p>
+        <div class="legal-contact-box">
+          <div class="lcb-icon">
+            <i data-lucide="mail" style="width:22px;height:22px;"></i>
+          </div>
+          <div>
+            <strong style="display:block;margin-bottom:4px;font-size:.9rem;">Email Us</strong>
+            <a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top-strip">
+      <div class="fts-left">
+        <span class="fts-tag">Ready to Build Something Great?</span>
+        <h3>Let's turn your <span class="g-text">idea into reality</span></h3>
+      </div>
+      <a href="index.html#contact" class="btn btn-primary">
+        Start a Project
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
+    <div class="footer-divider-line"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
+          <span class="logo-text">ShopSync<span>.</span></span>
+        </a>
+        <p>Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.</p>
+        <div class="social-row">
+          <a href="https://web.facebook.com/shopsynctech" target="_blank" rel="noopener" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:admin@shopsynctech.com" class="soc-link"><i data-lucide="mail" style="width:17px;height:17px;"></i></a>
+          <a href="tel:+8801719272845" class="soc-link"><i data-lucide="phone" style="width:17px;height:17px;"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="index.html#services">Web Development</a></li>
+          <li><a href="index.html#services">Mobile Apps</a></li>
+          <li><a href="index.html#services">AI Integration</a></li>
+          <li><a href="index.html#services">Custom Software</a></li>
+          <li><a href="index.html#services">UI/UX Design</a></li>
+          <li><a href="index.html#services">Cloud &amp; DevOps</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="https://egalee.com/" target="_blank" rel="noopener">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a></li>
+          <li><a href="tel:+8801719272845">+880 1719-272845</a></li>
+          <li><a href="index.html#contact">Start a Project</a></li>
+          <li><a href="index.html#contact">Schedule a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>ShopSync Technologies</span>. All rights reserved.</p>
+      <p><a href="privacy-policy.html" style="color:rgba(255,255,255,.45);transition:.25s;" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="terms-of-service.html" style="color:rgba(255,255,255,.45);transition:.25s;" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
