@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing &amp; Engagement Models — ShopSync Technologies</title>
+  <meta name="description" content="Transparent, predictable pricing models for software development: Dedicated Agile Squads, Fixed-Scope MVPs, and Enterprise Pods." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════ NAVBAR ════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
+      <span class="logo-text">ShopSync<span>.</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary" style="padding:10px 22px;font-size:.87rem;">
+        Get Started
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">
+    <i data-lucide="x" style="width:26px;height:26px;stroke:var(--muted);"></i>
+  </button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="about.html">About Us</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Get Started</a>
+</div>
+
+<!-- ══════════════════════ PAGE HERO ══════════════════════════ -->
+<header class="page-hero">
+  <div class="page-hero-orb page-hero-orb-1"></div>
+  <div class="page-hero-orb page-hero-orb-2"></div>
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i data-lucide="chevron-right"></i>
+      <span>Pricing</span>
+    </div>
+    <div class="chip">
+      <span class="chip-dot"></span>
+      Transparent Engagement
+    </div>
+    <h1>Predictable Models for <span class="g-text">Every Stage</span></h1>
+    <p>No surprise invoices, hidden management overhead, or multi-year lock-ins. Select the engagement structure that aligns with your product roadmap.</p>
+  </div>
+</header>
+
+<!-- ══════════════════════ PRICING CARDS ══════════════════════ -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+
+    <div class="pricing-grid">
+
+      <!-- Plan 1: Startup MVP Launchpad -->
+      <div class="pricing-card reveal">
+        <div class="pricing-head">
+          <h3>MVP Launchpad</h3>
+          <p>For early-stage startups needing a battle-tested V1 product to raise funding or onboard first users.</p>
+        </div>
+        <div class="pricing-rate">
+          <span class="price-val">$4,500</span>
+          <span class="price-unit">/ starting milestone</span>
+        </div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check"></i> 4 to 8 weeks delivery timeline</li>
+          <li><i data-lucide="check"></i> Interactive UI/UX Figma prototypes</li>
+          <li><i data-lucide="check"></i> Production web or mobile app build</li>
+          <li><i data-lucide="check"></i> Auth, Database &amp; Payment integration</li>
+          <li><i data-lucide="check"></i> Automated CI/CD deployment to Vercel/AWS</li>
+          <li><i data-lucide="check"></i> 30-day post-launch bug warranty</li>
+          <li><i data-lucide="check"></i> 100% intellectual property ownership</li>
+        </ul>
+        <a href="contact.html?plan=mvp" class="btn btn-ghost" style="width:100%;justify-content:center;">
+          Build My MVP
+        </a>
+      </div>
+
+      <!-- Plan 2: Dedicated Squad (Featured) -->
+      <div class="pricing-card featured reveal" style="transition-delay:.15s;">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-head">
+          <h3>Dedicated Agile Squad</h3>
+          <p>Seamlessly augment your engineering velocity with dedicated senior engineers embedded in your workflow.</p>
+        </div>
+        <div class="pricing-rate">
+          <span class="price-val">$3,200</span>
+          <span class="price-unit">/ senior engineer / month</span>
+        </div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check"></i> Top 3% pre-vetted senior software engineers</li>
+          <li><i data-lucide="check"></i> Direct Slack / Discord / Linear collaboration</li>
+          <li><i data-lucide="check"></i> Daily standups &amp; 2-week sprint cadence</li>
+          <li><i data-lucide="check"></i> Flexible scaling (add or scale down anytime)</li>
+          <li><i data-lucide="check"></i> Zero recruitment fees or payroll overhead</li>
+          <li><i data-lucide="check"></i> Timezone overlap with US &amp; EU workdays</li>
+          <li><i data-lucide="check"></i> 14-day risk-free trial guarantee</li>
+        </ul>
+        <a href="contact.html?plan=squad" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Hire an Engineering Pod
+        </a>
+      </div>
+
+      <!-- Plan 3: Enterprise Cloud & AI Pod -->
+      <div class="pricing-card reveal" style="transition-delay:.3s;">
+        <div class="pricing-head">
+          <h3>Enterprise &amp; AI Pod</h3>
+          <p>For mid-market and enterprise businesses modernizing legacy platforms or building secure GenAI systems.</p>
+        </div>
+        <div class="pricing-rate">
+          <span class="price-val">Custom</span>
+          <span class="price-unit">/ dedicated cross-functional pod</span>
+        </div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check"></i> Cross-functional squad (Lead Architect, QA, DevOps)</li>
+          <li><i data-lucide="check"></i> Custom RAG, LLM fine-tuning &amp; Vector DBs</li>
+          <li><i data-lucide="check"></i> SOC 2 &amp; HIPAA compliance architecture</li>
+          <li><i data-lucide="check"></i> Dedicated 99.99% uptime production SLA</li>
+          <li><i data-lucide="check"></i> 24/7 emergency incident response</li>
+          <li><i data-lucide="check"></i> Executive quarterly engineering reviews</li>
+          <li><i data-lucide="check"></i> Custom MSA &amp; procurement terms</li>
+        </ul>
+        <a href="contact.html?plan=enterprise" class="btn btn-ghost" style="width:100%;justify-content:center;">
+          Consult Solution Architect
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ ESTIMATOR TOOL ═════════════════════ -->
+<section class="section" style="background:var(--bg2);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="chip"><span class="chip-dot"></span>Interactive Calculator</div>
+      <h2>Calculate Your <span class="g-text">Project Scope</span></h2>
+      <div class="divider"></div>
+      <p>Select your required capabilities to get an instant realistic timeline and cost estimate.</p>
+    </div>
+
+    <div class="estimator-wrapper reveal" id="projectEstimator">
+      <!-- Step 1: Project Type -->
+      <div class="estimator-row">
+        <h4><i data-lucide="layers" style="width:18px;height:18px;stroke:var(--g1);"></i> 1. What type of software are you building?</h4>
+        <div class="estimator-chips">
+          <div class="est-chip selected" data-group="type" data-pmin="0" data-pmax="0" data-wmin="0" data-wmax="0">
+            SaaS Web Platform
+          </div>
+          <div class="est-chip" data-group="type" data-pmin="1200" data-pmax="2500" data-wmin="1" data-wmax="2">
+            Mobile App (iOS &amp; Android)
+          </div>
+          <div class="est-chip" data-group="type" data-pmin="2500" data-pmax="5000" data-wmin="2" data-wmax="3">
+            GenAI &amp; RAG System
+          </div>
+          <div class="est-chip" data-group="type" data-pmin="3000" data-pmax="6000" data-wmin="2" data-wmax="4">
+            Cloud DevOps &amp; Microservices
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Features -->
+      <div class="estimator-row">
+        <h4><i data-lucide="check-square" style="width:18px;height:18px;stroke:var(--g1);"></i> 2. What features and integrations are needed?</h4>
+        <div class="estimator-chips">
+          <div class="est-chip selected" data-group="features" data-pmin="800" data-pmax="1500" data-wmin="1" data-wmax="1">
+            User Auth &amp; Role RBAC
+          </div>
+          <div class="est-chip selected" data-group="features" data-pmin="1000" data-pmax="2000" data-wmin="1" data-wmax="2">
+            Stripe / Multi-Currency Payments
+          </div>
+          <div class="est-chip" data-group="features" data-pmin="1500" data-pmax="3000" data-wmin="1" data-wmax="2">
+            Real-Time WebSocket Sync
+          </div>
+          <div class="est-chip" data-group="features" data-pmin="2000" data-pmax="4500" data-wmin="2" data-wmax="3">
+            AI Assistant / Smart Search
+          </div>
+          <div class="est-chip" data-group="features" data-pmin="1200" data-pmax="2200" data-wmin="1" data-wmax="2">
+            Complex Analytics Dashboard
+          </div>
+          <div class="est-chip" data-group="features" data-pmin="1800" data-pmax="3500" data-wmin="1" data-wmax="2">
+            Multi-Tenant Database Isolation
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Timeline -->
+      <div class="estimator-row">
+        <h4><i data-lucide="clock" style="width:18px;height:18px;stroke:var(--g1);"></i> 3. Desired delivery speed</h4>
+        <div class="estimator-chips">
+          <div class="est-chip selected" data-group="timeline" data-pmin="0" data-pmax="0" data-wmin="0" data-wmax="0">
+            Standard Agile (Recommended)
+          </div>
+          <div class="est-chip" data-group="timeline" data-pmin="2000" data-pmax="4000" data-wmin="-1" data-wmax="-2">
+            Expedited Sprint (Dual Squad)
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Box -->
+      <div class="est-summary-box">
+        <div>
+          <span class="est-est-title">Estimated Investment</span>
+          <div class="est-price-range" id="estPrice">$6,300 - $12,500</div>
+          <div class="est-time-range" id="estTime">Estimated Delivery: ~5 - 9 Weeks (Agile Sprints)</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding:14px 28px;">
+          Lock In This Estimate <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ CTA ════════════════════════════════ -->
+<section id="cta" class="section">
+  <div class="container reveal">
+    <div class="chip" style="margin-bottom:28px;">
+      <span class="chip-dot"></span>
+      14-Day Risk-Free Trial
+    </div>
+    <h2>Try an Engineering Squad with<br><span class="g-text">Complete Confidence</span></h2>
+    <p>Test our code quality and communication for two weeks. If you aren't thrilled with our delivery velocity, you owe nothing.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-primary">
+        Start 14-Day Trial
+        <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+      </a>
+      <a href="case-studies.html" class="btn btn-ghost">
+        Review Client Case Studies
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top-strip">
+      <div>
+        <span class="fts-tag">Transparent engineering</span>
+        <h3>Ready to build your next breakthrough product?</h3>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;">
+        Get Started <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+      </a>
+    </div>
+
+    <div class="footer-divider-line"></div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:4px;">
+          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync" />
+          <span class="logo-text">ShopSync<span>.</span></span>
+        </a>
+        <p>A full-service engineering company helping high-growth startups and enterprises build world-class software products.</p>
+        <div class="soc-links">
+          <a href="https://github.com" class="soc-link" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" class="soc-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="https://twitter.com" class="soc-link" target="_blank" rel="noopener" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Capabilities</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="about.html">About Company</a></li>
+          <li><a href="pricing.html">Pricing &amp; Models</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="services.html">Custom SaaS Development</a></li>
+          <li><a href="services.html">Enterprise AI &amp; RAG</a></li>
+          <li><a href="services.html">iOS &amp; Android Apps</a></li>
+          <li><a href="services.html">DevOps &amp; Kubernetes</a></li>
+          <li><a href="services.html">UI/UX Design Systems</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Locations &amp; Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@shopsynctech.com">hello@shopsynctech.com</a></li>
+          <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+          <li><span>San Francisco, CA &bull; London &bull; Dhaka</span></li>
+          <li><span style="color:var(--g1);font-weight:600;">Response within 4 hours</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ShopSync Technologies. All rights reserved.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="privacy-policy.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Privacy Policy</a>
+        <a href="terms-of-service.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

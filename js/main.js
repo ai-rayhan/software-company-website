@@ -169,3 +169,64 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+
+/* ══════════════════════════════════════════════════════════════════
+   INTERACTIVE ESTIMATOR & GLOBAL AGENCY ENHANCEMENTS
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Interactive Scope Estimator ────────────────────────────── */
+(function() {
+  const estWrapper = document.getElementById('projectEstimator');
+  if (!estWrapper) return;
+
+  const chips = estWrapper.querySelectorAll('.est-chip');
+  const priceDisplay = document.getElementById('estPrice');
+  const timeDisplay = document.getElementById('estTime');
+
+  function calculateEstimate() {
+    let baseMin = 4500;
+    let baseMax = 9000;
+    let weeksMin = 3;
+    let weeksMax = 6;
+
+    const selectedChips = estWrapper.querySelectorAll('.est-chip.selected');
+    selectedChips.forEach(chip => {
+      const pMin = parseInt(chip.dataset.pmin || 0, 10);
+      const pMax = parseInt(chip.dataset.pmax || 0, 10);
+      const wMin = parseInt(chip.dataset.wmin || 0, 10);
+      const wMax = parseInt(chip.dataset.wmax || 0, 10);
+      baseMin += pMin;
+      baseMax += pMax;
+      weeksMin += wMin;
+      weeksMax += wMax;
+    });
+
+    if (priceDisplay) {
+      priceDisplay.textContent = `$${baseMin.toLocaleString()} - $${baseMax.toLocaleString()}`;
+    }
+    if (timeDisplay) {
+      timeDisplay.textContent = `Estimated Delivery: ~${weeksMin} - ${weeksMax} Weeks (Agile Sprints)`;
+    }
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', function() {
+      const group = this.dataset.group;
+      if (group === 'type' || group === 'timeline') {
+        estWrapper.querySelectorAll(`.est-chip[data-group="${group}"]`).forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+      } else {
+        this.classList.toggle('selected');
+      }
+      calculateEstimate();
+    });
+  });
+
+  calculateEstimate();
+})();
+
+/* Initialize Lucide icons if available */
+if (window.lucide) {
+  window.lucide.createIcons();
+}
