@@ -64,6 +64,13 @@
       setTimeout(() => { btn.innerHTML = idleHTML; btn.disabled = false; if (window.lucide) window.lucide.createIcons(); }, 3500);
     });
     form.addEventListener('input', (e) => e.target.classList.remove('invalid'));
+    /* Prefill from links such as contact.html?service=ai&role=Senior+Engineer */
+    const qp = new URLSearchParams(location.search);
+    if (form.elements.service && qp.get('service')) {
+      const opt = Array.from(form.elements.service.options).find((o) => o.value === qp.get('service'));
+      if (opt) form.elements.service.value = opt.value;
+    }
+    if (form.elements.message && qp.get('role')) form.elements.message.value = 'Application for: ' + qp.get('role') + '\n\nAbout me: ';
   }
 
   /* ── Estimator → saved quote ──────────────────────────── */

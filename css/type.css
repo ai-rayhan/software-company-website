@@ -26,3 +26,19 @@ small,.crumb,.win-bar span{font-size:max(.78rem,12px)}
   .btn-lg{width:100%;justify-content:center}
   .h-actions{width:100%}
 }
+
+/* Corporate section labels: plain text with a short rule, no pills, no blinking dots */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--ff-body);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--o2);margin-bottom:18px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--o);flex:none}
+.sec-head .eyebrow,.sec-top.center .eyebrow{justify-content:center}
+.chip,.chip-dot{display:none!important}
+
+/* Looser, more comfortable heading rhythm (Plus Jakarta runs tight by default) */
+.h-hero h1,.p-hero h1{letter-spacing:-.018em;word-spacing:.04em;line-height:1.12}
+.h2,.sec-head h2,.about-content h2,.goal-copy h3,.frow h3,.big-cta h2{letter-spacing:-.012em;word-spacing:.04em;line-height:1.2}
+h3,h4{letter-spacing:-.005em}
+.stat b,.bigstats b{letter-spacing:-.02em}
+
+/* mobile menu sits above the sticky header so its close button is reachable */
+.mobile-nav{z-index:1100}
+.mobile-close{z-index:1101}

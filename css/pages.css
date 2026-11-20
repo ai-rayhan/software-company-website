@@ -1,7 +1,7 @@
 /* ShopSync — inner pages (services, case studies, about, pricing, contact) */
-.p-hero{position:relative;overflow:hidden;padding:84px 0 90px;background:radial-gradient(800px 420px at 90% 0%,rgba(246,102,15,.14),transparent 60%),#fff}
+.p-hero{position:relative;overflow:hidden;padding:84px 0 90px;background:#fff}
 .p-hero::before,.p-hero::after{content:'';position:absolute;border-radius:28px;transform:skewX(-24deg) rotate(-8deg);pointer-events:none}
-.p-hero::before{width:360px;height:130px;right:-60px;top:70px;background:linear-gradient(135deg,var(--o),var(--o2));opacity:.92;animation:drift 9s ease-in-out infinite alternate}
+.p-hero::before{width:360px;height:130px;right:-60px;top:70px;background:var(--o);opacity:.92;animation:drift 9s ease-in-out infinite alternate}
 .p-hero::after{width:260px;height:100px;right:14%;bottom:-30px;background:var(--k);animation:drift 11s ease-in-out 1s infinite alternate-reverse}
 .p-hero .container{position:relative;z-index:1}
 .crumb{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted);margin-bottom:22px}
@@ -35,14 +35,14 @@
 .mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
 .mstats div{background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border-radius:18px;padding:16px}
 .mstats b{display:block;font-family:var(--ff-head);font-size:1.7rem;line-height:1.1}.mstats span{font-size:.74rem;opacity:.85}
-.g-o{background:linear-gradient(135deg,var(--o),var(--o2))}.g-k{background:var(--k)}.g-k2{background:linear-gradient(135deg,#2a2d2c,#0A0C0B)}.g-o2{background:linear-gradient(135deg,var(--o3),var(--o))}
+.g-o{background:var(--o)}.g-k{background:var(--k)}.g-k2{background:#2a2d2c}.g-o2{background:var(--o3)}
 
 /* card grids */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .card2{background:#fff;border:1px solid var(--border);border-radius:28px;padding:34px;transition:.4s var(--ease)}
 .card2:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(10,12,11,.12);border-color:rgba(246,102,15,.4)}
-.card2 .ci{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,var(--o),var(--o2));display:grid;place-items:center;margin-bottom:22px}
+.card2 .ci{width:54px;height:54px;border-radius:18px;background:var(--o);display:grid;place-items:center;margin-bottom:22px}
 .card2 .ci svg{width:26px;height:26px;stroke:#fff}
 .card2 h4{font-family:var(--ff-head);font-size:1.25rem;letter-spacing:-.02em;margin-bottom:10px}
 .card2 p{color:var(--text2);line-height:1.75;font-size:.95rem}
@@ -105,7 +105,7 @@
 .ct-card{display:flex;gap:16px;background:#f6f5f2;border-radius:26px;padding:26px;transition:.3s}
 .ct-card:hover{background:#fff;box-shadow:0 20px 40px rgba(10,12,11,.1)}
 .ct-card.dk{background:var(--k);color:#fff}.ct-card.dk p{color:rgba(255,255,255,.65)}
-.ct-card .ci{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,var(--o),var(--o2));display:grid;place-items:center;flex:none}
+.ct-card .ci{width:50px;height:50px;border-radius:16px;background:var(--o);display:grid;place-items:center;flex:none}
 .ct-card .ci svg{width:22px;height:22px;stroke:#fff}
 .ct-card h4{font-family:var(--ff-head);margin-bottom:4px}.ct-card p{color:var(--text2);font-size:.92rem;line-height:1.6}
 .ct-card a{color:var(--o2);font-weight:700}

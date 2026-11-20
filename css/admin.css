@@ -2,10 +2,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--k);line-height:1.5}
 .hidden{display:none!important}
-.btn{background:linear-gradient(135deg,var(--o2),var(--o));color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:600;cursor:pointer;font:inherit;font-weight:600;text-decoration:none;display:inline-block}
+.btn{background:var(--o2);color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:600;cursor:pointer;font:inherit;font-weight:600;text-decoration:none;display:inline-block}
 .btn.ghost{background:#fff;color:var(--k);border:1px solid var(--b)}
 .btn:hover{filter:brightness(1.06)}
-.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 20% 10%,rgba(246,102,15,.18),transparent 50%),var(--k)}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:var(--k)}
 .login-card{background:#fff;border-radius:20px;padding:36px;width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px}
 .login-logo{width:48px;height:48px;border-radius:12px}
 .login-card h1{font-size:1.5rem}.login-card p{color:var(--m);font-size:.9rem}

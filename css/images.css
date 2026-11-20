@@ -1,6 +1,6 @@
 /* Image slots — every photo has a designed fallback underneath */
 .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:block}
-.shade{position:absolute;inset:0;z-index:0;display:none;background:linear-gradient(to top,rgba(10,12,11,.82) 0%,rgba(10,12,11,.35) 55%,rgba(10,12,11,.1) 100%)}
+.shade{position:absolute;inset:0;z-index:0;display:none;background:rgba(10,12,11,0.42)}
 .has-img>.shade{display:block}
 .fr-vis.has-img::before,.fr-vis.has-img::after,.cs-l.has-img::before,.slide-r.has-img::before,.big-cta.has-img::before,.big-cta.has-img::after,.rc-vis.has-img::before,.rc-vis.has-img::after{display:none}
 .fr-vis>.mstats,.fr-vis>.ico,.cs-l>div,.slide-r>.big,.big-cta>*:not(.bgimg):not(.shade){position:relative;z-index:1}
@@ -8,8 +8,8 @@
 .cs-l>.bgimg,.fr-vis>.bgimg,.slide-r>.bgimg,.big-cta>.bgimg,.hsec.dark>.bgimg{position:absolute}
 
 /* generic framed photo */
-.slot{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(135deg,var(--o),var(--o2));aspect-ratio:var(--ar,4/3)}
-.slot.dk{background:linear-gradient(135deg,#2a2d2c,#0A0C0B)}
+.slot{position:relative;overflow:hidden;border-radius:30px;background:var(--o);aspect-ratio:var(--ar,4/3)}
+.slot.dk{background:#2a2d2c}
 .slot::before{content:'';position:absolute;width:55%;height:26%;right:-8%;top:10%;background:rgba(255,255,255,.18);border-radius:18px;transform:skewX(-24deg) rotate(-8deg)}
 .slot.has-img::before{display:none}
 .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
@@ -23,7 +23,7 @@
 .rc:hover .rc-vis img{transform:scale(1.06)}
 .rc-vis::before,.rc-vis::after{z-index:1}
 .rc-vis svg{z-index:2}
-.rc-vis.has-img::after{display:block;content:'';inset:0;width:auto;height:auto;border-radius:0;transform:none;left:0;bottom:0;background:linear-gradient(to top,rgba(10,12,11,.55),transparent 60%)}
+.rc-vis.has-img::after{display:block;content:'';inset:0;width:auto;height:auto;border-radius:0;transform:none;left:0;bottom:0;background:rgba(10,12,11,0.39)}
 .rc-vis.has-img svg{position:absolute;left:18px;top:18px;width:24px;height:24px;padding:11px;box-sizing:content-box;background:rgba(10,12,11,.55);border-radius:14px;backdrop-filter:blur(8px);transform:none!important}
 .rc-vis.has-img::before{display:none}
 
@@ -48,7 +48,7 @@
 .hsec.dark>.container{position:relative;z-index:1}
 .hsec.dark.has-img>.shade{background:rgba(10,12,11,.78)}
 .big-cta{isolation:isolate}
-.big-cta.has-img>.shade{background:linear-gradient(135deg,rgba(10,12,11,.88),rgba(10,12,11,.6))}
+.big-cta.has-img>.shade{background:rgba(10,12,11,0.74)}
 @media(max-width:980px){
   .stage .hero-photo{left:14%}
   .collage{grid-template-columns:1fr 1fr}
