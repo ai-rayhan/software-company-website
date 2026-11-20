@@ -121,13 +121,12 @@
   }));
 
   /* ── FAQ expand/collapse all ──────────────────────────── */
-  const faqList = document.querySelector('.faq-list');
-  if (faqList) {
-    const tools = document.createElement('div'); tools.className = 'faq-tools';
-    tools.innerHTML = '<button type="button" data-a="open">Expand all</button><button type="button" data-a="close">Collapse all</button>';
-    faqList.parentNode.insertBefore(tools, faqList);
-    tools.addEventListener('click', (e) => {
-      const a = e.target.dataset.a; if (!a) return;
+  const faqTools = document.querySelector('.faq-tools');
+  if (faqTools) {
+    faqTools.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-a]');
+      if (!btn) return;
+      const a = btn.dataset.a;
       $$('.faq-item').forEach((i) => i.classList.toggle('open', a === 'open'));
     });
   }

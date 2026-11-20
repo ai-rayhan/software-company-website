@@ -24,7 +24,7 @@
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
-      <span class="logo-text">ShopSync<span>.</span></span>
+      <span class="logo-text">ShopSync Technologies</span>
     </a>
 
     <ul class="nav-links">
@@ -68,7 +68,7 @@
   <div class="container h-hero-grid">
     <div>
       <div class="h-pill reveal"><i>NEW</i> AI product squads now booking Q1</div>
-      <h1 class="reveal">Win customers from <span class="hl">idea<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14 C 50 4, 120 4, 197 12"/></svg></span> to launch.</h1>
+      <h1 class="reveal">Win customers from <span class="hl">idea<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14 C 50 4, 120 4, 197 12"/></svg></span> to launch</h1>
       <p class="lede reveal">ShopSync designs and builds web, mobile and AI products that turn visitors into customers. Senior engineers, transparent sprints, code you own.</p>
       <div class="h-actions reveal">
         <a href="#contact" class="btn btn-primary btn-lg">Start your project <i data-lucide="arrow-right" style="width:17px;height:17px"></i></a>
@@ -80,22 +80,87 @@
       </div>
     </div>
 
-    <div class="stage reveal zoom" aria-hidden="true">
-      <div class="chev c1"></div><div class="chev c2"></div>
-      <figure class="slot hero-photo dk"><img data-slot src="assets/images/hero/hero-team.jpg" alt="ShopSync engineers collaborating on a product" loading="eager" decoding="async"></figure>
-      <div class="fcard fc1"><div class="ic"><i data-lucide="rocket"></i></div><div><b>Deployed to production</b><span>v2.4.1 · 12 seconds ago</span></div></div>
-      <div class="win">
-        <div class="win-bar"><i></i><i></i><i></i><span>app.yourproduct.com/growth</span></div>
-        <div class="win-body">
-          <div class="win-top"><div><small>Monthly revenue</small><strong data-count="248" data-prefix="$" data-suffix="K">$0K</strong></div><em>▲ 38% this quarter</em></div>
-          <svg class="spark" viewBox="0 0 400 130" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6660F" stop-opacity=".35"/><stop offset="1" stop-color="#F6660F" stop-opacity="0"/></linearGradient></defs>
-            <path class="area" d="M0 110 C 40 100, 60 80, 100 85 S 160 60, 200 55 S 270 70, 300 40 S 360 20, 400 10 L400 130 L0 130Z"/>
-            <path class="line" d="M0 110 C 40 100, 60 80, 100 85 S 160 60, 200 55 S 270 70, 300 40 S 360 20, 400 10"/></svg>
-          <div class="win-row"><div><b>18.6K</b><span>Active users</span></div><div><b>4.8%</b><span>Conversion</span></div><div><b>99.9%</b><span>Uptime</span></div></div>
+    <div class="hero-stage-wrap reveal zoom" aria-hidden="true">
+      <div class="hero-stage-glow"></div>
+      
+      <!-- Floating Top Badge -->
+      <div class="hero-float-badge hfb-top">
+        <div class="hfb-icon"><i data-lucide="check-circle-2"></i></div>
+        <div class="hfb-text">
+          <b>Production Verified</b>
+          <span>v2.4.1 shipped · 100% CI/CD</span>
         </div>
       </div>
-      <div class="fcard fc2"><div class="ic" style="background:var(--k)"><i data-lucide="sparkles"></i></div><div><b>AI assistant</b><span>Drafting reply<span class="typing"><i></i><i></i><i></i></span></span></div></div>
-      <div class="fcard fc3"><div class="ic"><i data-lucide="check"></i></div><div><b>New lead captured</b><span>Sarah · Enterprise plan</span></div></div>
+
+      <!-- Main Showcase Window -->
+      <div class="hero-window">
+        <!-- Window Browser Bar -->
+        <div class="hwin-bar">
+          <div class="hwin-dots"><span></span><span></span><span></span></div>
+          <div class="hwin-url">
+            <i data-lucide="lock" style="width:12px;height:12px"></i>
+            <span>app.shopsynctech.com/metrics</span>
+          </div>
+          <div class="hwin-badge"><span class="hwin-live-dot"></span> Live Squad</div>
+        </div>
+
+        <!-- Window Body -->
+        <div class="hwin-body">
+          <div class="hwin-header">
+            <div>
+              <span class="hwin-lbl">Quarterly Revenue Pipeline</span>
+              <div class="hwin-val">
+                <strong data-count="248" data-prefix="$" data-suffix="K">$0K</strong>
+                <span class="hwin-pill">▲ 38.4% this quarter</span>
+              </div>
+            </div>
+            <div class="hwin-submetrics">
+              <div class="hsm-item"><small>Conversion</small><b>4.8%</b></div>
+              <div class="hsm-item"><small>Active Users</small><b>18.6K</b></div>
+              <div class="hsm-item"><small>SLA Uptime</small><b>99.99%</b></div>
+            </div>
+          </div>
+
+          <!-- Chart Area -->
+          <div class="hwin-chart-wrap">
+            <svg class="hwin-chart" viewBox="0 0 500 130" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="heroGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#F6660F" stop-opacity="0.32"/>
+                  <stop offset="100%" stop-color="#F6660F" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <path class="hwin-area" d="M0 110 C 50 100, 90 80, 140 85 S 210 55, 260 50 S 340 65, 380 35 S 440 20, 500 10 L500 130 L0 130 Z"/>
+              <path class="hwin-line" d="M0 110 C 50 100, 90 80, 140 85 S 210 55, 260 50 S 340 65, 380 35 S 440 20, 500 10"/>
+              <circle cx="260" cy="50" r="4.5" class="hwin-dot"/>
+              <circle cx="500" cy="10" r="5" class="hwin-dot pulse"/>
+            </svg>
+          </div>
+
+          <!-- Integrated Team / Release Strip -->
+          <div class="hwin-squad-strip">
+            <div class="hwin-squad-photo">
+              <img src="assets/images/hero/hero-team.jpg" alt="Dedicated ShopSync squad" loading="eager" decoding="async">
+            </div>
+            <div class="hwin-squad-info">
+              <b>Dedicated Product Squad Active</b>
+              <span>Sprint 14 in progress · London &amp; Dhaka Hubs</span>
+            </div>
+            <div class="hwin-squad-state">
+              <span class="status-indicator"></span> 0 blockers
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Bottom Badge -->
+      <div class="hero-float-badge hfb-bottom">
+        <div class="hfb-icon lead-ic"><i data-lucide="zap"></i></div>
+        <div class="hfb-text">
+          <b>New Enterprise Lead</b>
+          <span>Sarah · FinTech · Synced to CRM</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -127,11 +192,81 @@
           <button class="play-btn" data-play><i data-lucide="pause"></i><span>Pause animation</span></button>
         </div>
       </div>
-      <div class="demo">
-        <div class="d-card"><div class="d-line" style="--w:70%"><i></i></div><div class="d-line" style="--w:92%"><i></i></div><div class="d-line" style="--w:55%"><i></i></div>
-          <div class="d-kpi" style="margin-top:22px"><strong>248</strong><em>+38% leads this week</em></div></div>
-        <div class="d-pop a"><b>✓</b>New lead captured</div>
-        <div class="d-pop b"><b style="color:#fff">↗</b>Synced to CRM</div>
+      <div class="demo demo-leads">
+        <div class="leads-dashboard">
+          <div class="ld-header">
+            <div class="ld-title">
+              <div class="ld-icon"><i data-lucide="users"></i></div>
+              <div>
+                <strong>Lead Acquisition &amp; CRM Routing</strong>
+                <span>Real-time conversion pipeline</span>
+              </div>
+            </div>
+            <span class="ld-live-pill"><i class="ld-pulse"></i> Live Sync</span>
+          </div>
+
+          <!-- Funnel Stages -->
+          <div class="ld-funnel">
+            <div class="ld-stage">
+              <span class="ld-stage-val">14,820</span>
+              <span class="ld-stage-lbl">Total Visitors</span>
+              <div class="ld-bar"><div class="ld-fill" style="width:100%"></div></div>
+            </div>
+            <div class="ld-arrow"><i data-lucide="chevron-right"></i></div>
+            <div class="ld-stage">
+              <span class="ld-stage-val">3,410</span>
+              <span class="ld-stage-lbl">Engaged (23%)</span>
+              <div class="ld-bar"><div class="ld-fill" style="width:46%"></div></div>
+            </div>
+            <div class="ld-arrow"><i data-lucide="chevron-right"></i></div>
+            <div class="ld-stage active">
+              <span class="ld-stage-val">248</span>
+              <span class="ld-stage-lbl">Qualified Leads</span>
+              <div class="ld-bar"><div class="ld-fill accent" style="width:82%"></div></div>
+            </div>
+          </div>
+
+          <!-- Live Leads Stream -->
+          <div class="ld-feed">
+            <div class="ld-row">
+              <div class="ld-av" style="background:#F6660F">SJ</div>
+              <div class="ld-user">
+                <b>Sarah Jenkins</b>
+                <span>VP Product · FinTech Enterprise</span>
+              </div>
+              <span class="ld-badge score">Score 98</span>
+              <span class="ld-badge hubspot">HubSpot Synced</span>
+            </div>
+            <div class="ld-row">
+              <div class="ld-av" style="background:#0A0C0B">MR</div>
+              <div class="ld-user">
+                <b>Marcus Ray</b>
+                <span>Head of Growth · SaaS Platform</span>
+              </div>
+              <span class="ld-badge score">Score 94</span>
+              <span class="ld-badge booked">Demo Booked</span>
+            </div>
+            <div class="ld-row">
+              <div class="ld-av" style="background:#D94F00">AL</div>
+              <div class="ld-user">
+                <b>Aisha Lin</b>
+                <span>Tech Lead · Omnichannel E-com</span>
+              </div>
+              <span class="ld-badge score">Score 91</span>
+              <span class="ld-badge routed">Routed to Sales</span>
+            </div>
+          </div>
+
+          <!-- Bottom KPI Bar -->
+          <div class="ld-footer">
+            <div class="ld-fitem"><small>Conversion rate</small><strong>14.2%</strong></div>
+            <div class="ld-fitem"><small>Routing latency</small><strong>&lt; 2.4s</strong></div>
+            <div class="ld-fitem"><small>Weekly growth</small><strong style="color:var(--o)">+38% leads</strong></div>
+          </div>
+        </div>
+
+        <div class="d-pop a"><b>✓</b> New lead captured: Sarah · Enterprise plan</div>
+        <div class="d-pop b"><b style="color:#fff">↗</b> Synced to CRM</div>
       </div>
     </div>
 
@@ -190,7 +325,7 @@
 <!-- SERVICES -->
 <section id="services" class="hsec reach">
   <div class="container reach-head">
-    <div class="reveal"><span class="eyebrow">What we build</span><h2 class="h2">One team. <em>Every layer</em> of your product.</h2></div>
+    <div class="reveal"><span class="eyebrow">What we build</span><h2 class="h2">One team. <em>Every layer</em> of your product</h2></div>
     <div class="reach-nav"><button id="reachPrev" aria-label="Previous"><i data-lucide="arrow-left"></i></button><button id="reachNext" aria-label="Next"><i data-lucide="arrow-right"></i></button></div>
   </div>
   <div class="reach-track" id="reachTrack">
@@ -214,7 +349,7 @@
     </div>
     <div class="reveal from-right">
       <span class="eyebrow">Who we are</span>
-      <h2 class="h2">A senior team that <em>owns your outcome</em>.</h2>
+      <h2 class="h2">A senior team that <em>owns your outcome</em></h2>
       <p class="lede" style="margin:20px 0 10px">We are product engineers, designers and AI specialists across San Francisco, London and Dhaka. No juniors learning on your budget, no hand-offs that lose context.</p>
       <div class="checks"><div><i data-lucide="check"></i>Direct access to the engineers building your product</div><div><i data-lucide="check"></i>Weekly demos and a shared project board</div><div><i data-lucide="check"></i>You own 100% of the code and IP</div></div>
       <a href="about.html" class="btn btn-dark btn-lg" style="margin-top:30px">Meet the team <i data-lucide="arrow-right" style="width:17px;height:17px"></i></a>
@@ -225,7 +360,7 @@
 <!-- STATS -->
 <section class="hsec h-stats" id="stats">
   <div class="container">
-    <h2 class="h2 reveal">Numbers that <em style="color:#fff">speak louder</em> than pitches.</h2>
+    <h2 class="h2 reveal">Numbers that <em style="color:#fff">speak louder</em> than pitches</h2>
     <div class="stat-grid stagger">
       <div class="stat"><b data-target="150" data-suffix="+">0+</b><span>products shipped for startups and enterprises</span></div>
       <div class="stat"><b data-target="98" data-suffix="%">0%</b><span>client satisfaction across engagements</span></div>
@@ -240,7 +375,7 @@
   <div class="container split">
     <div class="sticky reveal from-left">
       <span class="eyebrow">How we work</span>
-      <h2 class="h2">From first call to <em>live in weeks</em>.</h2>
+      <h2 class="h2">From first call to <em>live in weeks</em></h2>
       <p class="lede" style="margin:20px 0 30px">Two-week sprints, a live demo at the end of each, and a shared board so you always know what's next.</p>
       <a href="contact.html" class="btn btn-dark btn-lg">Plan my project <i data-lucide="arrow-right" style="width:17px;height:17px"></i></a>
       <figure class="slot photo-side"><img data-slot src="assets/images/process/process.jpg" alt="Team running a sprint planning session" loading="lazy" decoding="async"></figure>
@@ -284,7 +419,7 @@
 <section id="results" class="hsec results">
   <div class="container">
     <span class="eyebrow">Real results from real businesses</span>
-    <h2 class="h2" style="max-width:760px">Teams ship faster <em>and grow</em> with ShopSync.</h2>
+    <h2 class="h2" style="max-width:760px">Teams ship faster <em>and grow</em> with ShopSync</h2>
     <div class="car" id="car">
       <div class="car-view"><div class="car-track" id="carTrack">
 <div class="slide"><div class="slide-l"><q>ShopSync re-architected our legacy payment pipeline in under 3 months. Throughput went up 4.2x and our cloud bill dropped.</q><div class="who"><b>Rachel Kowalski</b><span>Chief Product Officer · OmniFlow</span></div></div><div class="slide-r" style="background:linear-gradient(135deg,#F6660F,#D94F00)"><img class="bgimg" data-slot src="assets/images/results/omniflow.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span><div class="big"><b>4.2x</b><span>transaction throughput</span></div></div></div>
@@ -301,7 +436,7 @@
 
 <!-- TECH -->
 <section id="tech" class="hsec" style="overflow:hidden">
-  <div class="container" style="text-align:center"><span class="eyebrow">Our stack</span><h2 class="h2">Modern tools. <em>Battle-tested</em> choices.</h2></div>
+  <div class="container" style="text-align:center"><span class="eyebrow">Our stack</span><h2 class="h2">Modern tools. <em>Battle-tested</em> choices</h2></div>
   <div class="tech-wrap"><div class="tech-row"><span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span><span>Python</span><span>Go</span><span>PostgreSQL</span><span>Redis</span><span>GraphQL</span><span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span><span>Python</span><span>Go</span><span>PostgreSQL</span><span>Redis</span><span>GraphQL</span></div><div class="tech-row rev"><span>AWS</span><span>GCP</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Flutter</span><span>React Native</span><span>OpenAI</span><span>Claude</span><span>AWS</span><span>GCP</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Flutter</span><span>React Native</span><span>OpenAI</span><span>Claude</span></div></div>
 </section>
 
@@ -311,67 +446,91 @@
   <div class="container">
     <div class="faq-layout">
 
-      <div class="reveal">
+      <div class="faq-aside reveal">
         <div class="chip"><span class="chip-dot"></span>FAQ</div>
         <h3>Questions we<br>get asked <span class="g-text">a lot</span></h3>
         <p>Can&rsquo;t find what you&rsquo;re looking for? Drop us a message and we&rsquo;ll get back to you within 24 hours.</p>
-        <a href="#contact" class="btn btn-primary">
+        <a href="#contact" class="btn btn-primary" style="margin-bottom:30px;">
           Ask Us Anything
           <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
         </a>
+
+        <!-- Support Card in FAQ Left Column -->
+        <div class="faq-contact-card">
+          <div class="fcc-top">
+            <div class="fcc-avatars">
+              <span style="background:#F6660F">AK</span>
+              <span style="background:#0A0C0B">MR</span>
+              <span style="background:#D94F00">JS</span>
+            </div>
+            <span class="fcc-pill">Active Squad</span>
+          </div>
+          <h4>Need a custom scope?</h4>
+          <p>Book a direct 30-min architecture consultation with our senior engineering team.</p>
+          <a href="contact.html" class="fcc-link">Book free consult <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+        </div>
       </div>
 
-      <div class="faq-list reveal" style="transition-delay:.15s;">
-
-        <div class="faq-item open">
-          <div class="faq-q">
-            How long does a typical project take?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+      <div class="faq-main reveal" style="transition-delay:.15s;">
+        <div class="faq-tools-bar">
+          <span class="faq-count">6 frequently asked questions</span>
+          <div class="faq-tools">
+            <button type="button" data-a="open">Expand all</button>
+            <button type="button" data-a="close">Collapse all</button>
           </div>
-          <div class="faq-ans">It depends on scope. A marketing website takes 3&ndash;6 weeks. A full-featured SaaS platform typically runs 12&ndash;20 weeks. We always provide a detailed timeline during the discovery phase so you know exactly what to expect before we start building.</div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-q">
-            What does your development process look like?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+        <div class="faq-list">
+          <div class="faq-item open">
+            <div class="faq-q">
+              <span>How long does a typical project take?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">It depends on scope. A marketing website takes 3&ndash;6 weeks. A full-featured SaaS platform typically runs 12&ndash;20 weeks. We always provide a detailed timeline during the discovery phase so you know exactly what to expect before we start building.</div>
           </div>
-          <div class="faq-ans">We work in two-week agile sprints. Each sprint ends with a live demo so you can see real progress, give feedback, and steer the direction. You&rsquo;re never left wondering what we&rsquo;re working on — we use shared project boards and weekly video calls throughout the build.</div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-q">
-            Do you offer post-launch support and maintenance?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>What does your development process look like?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">We work in two-week agile sprints. Each sprint ends with a live demo so you can see real progress, give feedback, and steer the direction. You&rsquo;re never left wondering what we&rsquo;re working on — we use shared project boards and weekly video calls throughout the build.</div>
           </div>
-          <div class="faq-ans">Yes. All projects come with a 30-day free bug-fix warranty after launch. Beyond that, we offer flexible monthly retainers for ongoing support, feature development, performance monitoring, and security updates. Many clients keep us on retainer long-term as their dedicated engineering team.</div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-q">
-            How do I get a quote for my project?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>Do you offer post-launch support and maintenance?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">Yes. All projects come with a 30-day free bug-fix warranty after launch. Beyond that, we offer flexible monthly retainers for ongoing support, feature development, performance monitoring, and security updates. Many clients keep us on retainer long-term as their dedicated engineering team.</div>
           </div>
-          <div class="faq-ans">Tell us about your idea using the contact form. After a free 30-minute discovery call, we send a tailored proposal with scope, timeline and a clear breakdown, so you know exactly what to expect before committing to anything.</div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-q">
-            Will we own all the code and IP after the project?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>How do I get a quote for my project?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">Tell us about your idea using the contact form. After a free 30-minute discovery call, we send a tailored proposal with scope, timeline and a clear breakdown, so you know exactly what to expect before committing to anything.</div>
           </div>
-          <div class="faq-ans">Absolutely. Upon final payment, you receive full ownership of all source code, assets, and intellectual property. We hand over everything — repositories, design files, deployment configurations, and documentation. There are no licensing restrictions or lock-ins.</div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-q">
-            Can you work with our existing codebase or team?
-            <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>Will we own all the code and IP after the project?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">Absolutely. Upon final payment, you receive full ownership of all source code, assets, and intellectual property. We hand over everything — repositories, design files, deployment configurations, and documentation. There are no licensing restrictions or lock-ins.</div>
           </div>
-          <div class="faq-ans">Yes. We regularly integrate with existing engineering teams as an extension, take over legacy codebases, or pick up mid-project work. We begin every engagement with a thorough code audit so we understand exactly what we&rsquo;re building on before we touch anything.</div>
-        </div>
 
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>Can you work with our existing codebase or team?</span>
+              <div class="faq-toggle"><i data-lucide="plus" style="width:14px;height:14px;"></i></div>
+            </div>
+            <div class="faq-ans">Yes. We regularly integrate with existing engineering teams as an extension, take over legacy codebases, or pick up mid-project work. We begin every engagement with a thorough code audit so we understand exactly what we&rsquo;re building on before we touch anything.</div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -394,7 +553,7 @@
     <div class="contact-grid">
 
       <div class="reveal">
-        <h3>We'd love to hear<br>from you.</h3>
+        <h3>We'd love to hear<br>from you</h3>
         <p>Whether you have a fully scoped project or just a rough idea, reach out — we'll help you figure out the right path forward.</p>
 
         <div class="c-items">
@@ -503,7 +662,7 @@
       <div class="footer-brand">
         <a href="#hero" class="nav-logo" style="display:inline-flex;">
           <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
-          <span class="logo-text">ShopSync<span>.</span></span>
+          <span class="logo-text">ShopSync Technologies</span>
         </a>
         <p>Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.</p>
         <div class="social-row">

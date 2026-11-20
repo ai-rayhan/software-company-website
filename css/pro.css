@@ -55,6 +55,46 @@ html{scroll-padding-top:84px}
 .demo::before{content:'';position:absolute;width:260px;height:100px;right:-50px;top:-20px;background:linear-gradient(135deg,var(--o),var(--o2));border-radius:20px;transform:skewX(-24deg) rotate(-8deg);opacity:.16}
 .demo::after{content:'';position:absolute;width:220px;height:90px;left:-60px;bottom:-24px;background:var(--k);border-radius:20px;transform:skewX(-24deg) rotate(-8deg);opacity:.08}
 .demo.paused *{animation-play-state:paused!important}
+
+/* ── Rich Lead Generation Dashboard UI ───────────────────── */
+.demo.demo-leads{aspect-ratio:auto;min-height:410px;padding:20px}
+.leads-dashboard{position:relative;z-index:1;background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px;box-shadow:var(--sh-lg)}
+.ld-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.ld-title{display:flex;align-items:center;gap:10px}
+.ld-icon{width:34px;height:34px;border-radius:10px;background:rgba(246,102,15,.12);color:var(--o);display:grid;place-items:center}
+.ld-icon svg{width:18px;height:18px;stroke:var(--o)}
+.ld-title strong{display:block;font-size:.92rem;color:var(--k)}
+.ld-title span{font-size:.72rem;color:var(--muted)}
+.ld-live-pill{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:#10b981;background:rgba(16,185,129,.1);padding:4px 10px;border-radius:99px}
+.ld-pulse{width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 0 2px rgba(16,185,129,.3);animation:pulse-green 2s infinite}
+
+.ld-funnel{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#faf9f7;border-radius:14px;margin:12px 0}
+.ld-stage{flex:1;text-align:center}
+.ld-stage-val{display:block;font-family:var(--ff-head);font-size:1.1rem;font-weight:700;color:var(--k)}
+.ld-stage-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;margin-bottom:6px;display:block}
+.ld-bar{height:6px;border-radius:99px;background:#e5e2dc;overflow:hidden}
+.ld-fill{height:100%;border-radius:99px;background:#a3a099}
+.ld-stage.active .ld-stage-val{color:var(--o)}
+.ld-stage.active .ld-fill.accent{background:linear-gradient(90deg,var(--o2),var(--o))}
+.ld-arrow{color:var(--muted);display:grid;place-items:center}
+.ld-arrow svg{width:14px;height:14px}
+
+.ld-feed{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.ld-row{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:12px;background:#fff;border:1px solid #f0eee9;transition:background .2s}
+.ld-row:hover{background:#faf9f7}
+.ld-av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0}
+.ld-user{flex:1;min-width:0}
+.ld-user b{display:block;font-size:.82rem;color:var(--k);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ld-user span{display:block;font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ld-badge{font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.ld-badge.score{background:rgba(246,102,15,.1);color:var(--o2)}
+.ld-badge.hubspot{background:#fff1e8;color:#d94f00;border:1px solid rgba(217,79,0,.2)}
+.ld-badge.booked{background:#ecfdf5;color:#047857;border:1px solid rgba(4,120,87,.2)}
+.ld-badge.routed{background:#eff6ff;color:#1d4ed8;border:1px solid rgba(29,78,216,.2)}
+
+.ld-footer{display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.ld-fitem small{display:block;font-size:.68rem;color:var(--muted);text-transform:uppercase}
+.ld-fitem strong{font-family:var(--ff-head);font-size:.92rem;color:var(--k)}
 .d-card{position:relative;z-index:1;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--sh)}
 .d-line{height:10px;border-radius:6px;background:#ece9e4;margin-bottom:10px;position:relative;overflow:hidden}
 .d-line i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--o2),var(--o));border-radius:inherit;animation:fill 6s ease-in-out infinite}

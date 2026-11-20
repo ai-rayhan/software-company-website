@@ -9,6 +9,7 @@ const rateLimit = require('express-rate-limit');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
+const fs = require('fs');
 const db = require('./db');
 
 const PORT = process.env.PORT || 3000;
@@ -219,7 +220,9 @@ app.get('/api/admin/export.csv', requireAdmin, (_req, res) => {
 app.use('/api', (_req, res) => fail(res, 'Not found', 404));
 
 /* ── Static site ────────────────────────────────────────── */
-const root = path.join(__dirname, '..');
+const root = fs.existsSync(path.join(__dirname, '../public_html'))
+  ? path.join(__dirname, '../public_html')
+  : path.join(__dirname, '..');
 const PUBLIC = ['assets', 'css', 'js'];
 PUBLIC.forEach((d) => app.use('/' + d, express.static(path.join(root, d), { maxAge: IS_PROD ? '7d' : 0 })));
 app.get('/', (_req, res) => res.sendFile(path.join(root, 'index.html')));
