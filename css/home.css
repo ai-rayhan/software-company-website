@@ -41,60 +41,57 @@ body.home::before{display:none}
 .avatars{display:flex}.avatars span{width:36px;height:36px;border-radius:50%;border:3px solid #fff;margin-left:-10px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#fff}
 .avatars span:first-child{margin-left:0}
 
-/* hero stage (clean, world-class modern SaaS mockup) */
-.hero-stage-wrap{position:relative;display:flex;flex-direction:column;align-items:center;padding:14px 10px 24px}
-.hero-stage-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(246,102,15,.16),transparent 70%);pointer-events:none;z-index:0}
+/* hero image stage (clean, balanced, prominent photo showcase) */
+.hero-image-stage{position:relative;width:100%;max-width:540px;height:520px;display:flex;align-items:center;justify-content:center;margin-inline:auto}
+.his-glow{position:absolute;width:115%;height:115%;left:-7.5%;top:-7.5%;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(246,102,15,.2),rgba(246,102,15,.04) 55%,transparent 75%);filter:blur(24px);pointer-events:none;z-index:0}
 
-/* Main window */
-.hero-window{position:relative;z-index:2;width:100%;max-width:540px;background:#fff;border-radius:24px;border:1px solid rgba(10,12,11,.08);box-shadow:0 30px 70px -15px rgba(10,12,11,.14),0 0 0 1px rgba(10,12,11,.04);overflow:hidden;animation:floaty 7s ease-in-out infinite}
-.hwin-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:#faf9f7;border-bottom:1px solid var(--border)}
-.hwin-dots{display:flex;gap:6px}
-.hwin-dots span{width:9px;height:9px;border-radius:50%;background:#e0ded9}
-.hwin-dots span:first-child{background:#ff5f57}
-.hwin-dots span:nth-child(2){background:#febc2e}
-.hwin-dots span:nth-child(3){background:#28c840}
-.hwin-url{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--muted);font-family:var(--ff-mono);background:#fff;border:1px solid var(--border);border-radius:6px;padding:3px 12px}
-.hwin-badge{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:var(--k)}
-.hwin-live-dot{width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.2);animation:pulse-green 2s infinite}
-@keyframes pulse-green{0%,100%{box-shadow:0 0 0 2px rgba(16,185,129,.2)}50%{box-shadow:0 0 0 6px rgba(16,185,129,.35)}}
+/* Photo Frame */
+.his-photo-frame{position:relative;z-index:1;width:100%;height:470px;border-radius:28px;overflow:hidden;box-shadow:0 35px 80px -15px rgba(10,12,11,.22),0 0 0 1px rgba(10,12,11,.08);background:#1a1d1c}
+.his-img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;transition:transform .7s var(--ease)}
+.hero-image-stage:hover .his-img{transform:scale(1.03)}
+.his-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,11,.55) 0%,rgba(10,12,11,.1) 45%,transparent 100%);pointer-events:none}
 
-.hwin-body{padding:22px 22px 16px}
-.hwin-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.hwin-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:4px}
-.hwin-val{display:flex;align-items:baseline;gap:12px}
-.hwin-val strong{font-family:var(--ff-head);font-size:2.2rem;line-height:1;font-weight:800;color:var(--k)}
-.hwin-pill{font-size:.78rem;font-weight:700;color:var(--o2);background:rgba(246,102,15,.12);padding:4px 10px;border-radius:99px}
-.hwin-submetrics{display:flex;gap:14px}
-.hsm-item{background:#f6f5f2;padding:8px 12px;border-radius:10px;text-align:right}
-.hsm-item small{display:block;font-size:.68rem;color:var(--muted);text-transform:uppercase}
-.hsm-item b{font-family:var(--ff-head);font-size:.95rem;color:var(--k)}
+/* Top Badge */
+.his-badge{position:absolute;z-index:3;border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 45px rgba(10,12,11,.16)}
+.his-badge b{display:block;font-size:.84rem;line-height:1.2}
+.his-badge span{font-size:.72rem}
+.his-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.his-ico.rocket{background:linear-gradient(135deg,var(--o),var(--o2));color:#fff}
+.his-ico.rocket svg{width:18px;height:18px;stroke:#fff}
+.his-ico.check{background:var(--o);color:#fff}
+.his-ico.check svg{width:18px;height:18px;stroke:#fff}
 
-.hwin-chart-wrap{position:relative;margin:16px 0 14px}
-.hwin-chart{width:100%;height:115px;display:block}
-.hwin-area{fill:url(#heroGradient)}
-.hwin-line{fill:none;stroke:var(--o);stroke-width:3;stroke-linecap:round}
-.hwin-dot{fill:var(--o);stroke:#fff;stroke-width:2}
-.hwin-dot.pulse{animation:ping 2s infinite}
-@keyframes ping{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.his-badge-top{top:14px;right:-14px;background:#fff;border:1px solid rgba(10,12,11,.08);color:var(--k);animation:floaty 6s ease-in-out infinite}
+.his-badge-top span{color:var(--muted)}
 
-.hwin-squad-strip{display:flex;align-items:center;gap:14px;background:#f8f7f5;border:1px solid var(--border);border-radius:14px;padding:10px 14px;margin-top:10px}
-.hwin-squad-photo{width:46px;height:46px;border-radius:10px;overflow:hidden;flex-shrink:0}
-.hwin-squad-photo img{width:100%;height:100%;object-fit:cover}
-.hwin-squad-info{flex:1;min-width:0}
-.hwin-squad-info b{display:block;font-size:.82rem;color:var(--k);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.hwin-squad-info span{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
-.hwin-squad-state{font-size:.75rem;font-weight:700;color:#10b981;display:flex;align-items:center;gap:5px;flex-shrink:0}
-.hwin-squad-state .status-indicator{width:6px;height:6px;border-radius:50%;background:#10b981}
+.his-badge-bottom{bottom:18px;right:-12px;background:var(--k);color:#fff;border:1px solid rgba(255,255,255,.14);box-shadow:0 22px 50px rgba(0,0,0,.35);animation:floaty 6.5s ease-in-out 1.2s infinite}
+.his-badge-bottom span{color:rgba(255,255,255,.65)}
 
-/* Floating Badges */
-.hero-float-badge{position:absolute;z-index:3;background:#fff;border:1px solid rgba(10,12,11,.08);border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px rgba(10,12,11,.12);display:flex;align-items:center;gap:12px;max-width:270px}
-.hero-float-badge b{display:block;font-size:.84rem;color:var(--k)}
-.hero-float-badge span{font-size:.72rem;color:var(--muted)}
-.hfb-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;flex-shrink:0}
-.hfb-icon svg{width:18px;height:18px;stroke:#fff}
-.hfb-icon.lead-ic{background:var(--k)}
-.hfb-top{top:0;right:-12px;animation:floaty 6s ease-in-out infinite}
-.hfb-bottom{bottom:0;left:-14px;background:#fff;animation:floaty 6.5s ease-in-out .8s infinite}
+/* Bottom Left Metric Glass Card */
+.his-metric-card{position:absolute;bottom:-10px;left:-20px;z-index:3;width:340px;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.8);border-radius:22px;box-shadow:0 30px 65px -10px rgba(10,12,11,.24),0 0 0 1px rgba(10,12,11,.04);overflow:hidden;animation:floaty 7s ease-in-out .6s infinite}
+.hmc-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:rgba(250,249,247,.9);border-bottom:1px solid var(--border)}
+.hmc-dots{display:flex;gap:5px}
+.hmc-dots span{width:8px;height:8px;border-radius:50%;background:#e0ded9}
+.hmc-dots span:first-child{background:#ff5f57}
+.hmc-dots span:nth-child(2){background:#febc2e}
+.hmc-dots span:nth-child(3){background:#28c840}
+.hmc-url{font-size:.7rem;font-family:var(--ff-mono);color:var(--muted)}
+.hmc-status{font-size:.68rem;font-weight:700;color:#10b981}
+
+.hmc-body{padding:18px 20px 14px}
+.hmc-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
+.hmc-top small{display:block;font-size:.68rem;text-transform:uppercase;color:var(--muted);letter-spacing:.08em}
+.hmc-top strong{font-family:var(--ff-head);font-size:1.85rem;line-height:1;font-weight:800;color:var(--k)}
+.hmc-top em{font-style:normal;font-size:.76rem;font-weight:700;color:var(--o2);background:rgba(246,102,15,.12);padding:3px 9px;border-radius:99px}
+
+.hmc-chart{width:100%;height:75px;display:block}
+.hmc-area{fill:url(#hmcGrad)}
+.hmc-line{fill:none;stroke:var(--o);stroke-width:2.8;stroke-linecap:round}
+
+.hmc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid #f0eee9}
+.hmc-stats div{text-align:center}
+.hmc-stats b{display:block;font-family:var(--ff-head);font-size:.92rem;color:var(--k)}
+.hmc-stats span{font-size:.65rem;color:var(--muted)}
 
 /* legacy stage fallback */
 .stage{display:none}

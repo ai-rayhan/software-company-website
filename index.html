@@ -80,85 +80,63 @@
       </div>
     </div>
 
-    <div class="hero-stage-wrap reveal zoom" aria-hidden="true">
-      <div class="hero-stage-glow"></div>
+    <div class="hero-image-stage reveal zoom" aria-hidden="true">
+      <div class="his-glow"></div>
       
-      <!-- Floating Top Badge -->
-      <div class="hero-float-badge hfb-top">
-        <div class="hfb-icon"><i data-lucide="check-circle-2"></i></div>
-        <div class="hfb-text">
-          <b>Production Verified</b>
-          <span>v2.4.1 shipped · 100% CI/CD</span>
+      <!-- Main Team Photo Frame -->
+      <div class="his-photo-frame">
+        <img src="assets/images/hero/hero-team.jpg" alt="ShopSync engineers collaborating on a product" loading="eager" decoding="async" class="his-img" />
+        <div class="his-shade"></div>
+      </div>
+
+      <!-- Top Right Floating Deploy Badge -->
+      <div class="his-badge his-badge-top">
+        <div class="his-ico rocket"><i data-lucide="rocket"></i></div>
+        <div class="his-txt">
+          <b>Deployed to production</b>
+          <span>v2.4.1 · 12 seconds ago</span>
         </div>
       </div>
 
-      <!-- Main Showcase Window -->
-      <div class="hero-window">
-        <!-- Window Browser Bar -->
-        <div class="hwin-bar">
-          <div class="hwin-dots"><span></span><span></span><span></span></div>
-          <div class="hwin-url">
-            <i data-lucide="lock" style="width:12px;height:12px"></i>
-            <span>app.shopsynctech.com/metrics</span>
-          </div>
-          <div class="hwin-badge"><span class="hwin-live-dot"></span> Live Squad</div>
+      <!-- Bottom Left Glassmorphic Growth Card -->
+      <div class="his-metric-card">
+        <div class="hmc-bar">
+          <div class="hmc-dots"><span></span><span></span><span></span></div>
+          <span class="hmc-url">app.shopsynctech.com/growth</span>
+          <span class="hmc-status">● Live</span>
         </div>
-
-        <!-- Window Body -->
-        <div class="hwin-body">
-          <div class="hwin-header">
+        <div class="hmc-body">
+          <div class="hmc-top">
             <div>
-              <span class="hwin-lbl">Quarterly Revenue Pipeline</span>
-              <div class="hwin-val">
-                <strong data-count="248" data-prefix="$" data-suffix="K">$0K</strong>
-                <span class="hwin-pill">▲ 38.4% this quarter</span>
-              </div>
+              <small>Monthly Revenue</small>
+              <strong data-count="248" data-prefix="$" data-suffix="K">$0K</strong>
             </div>
-            <div class="hwin-submetrics">
-              <div class="hsm-item"><small>Conversion</small><b>4.8%</b></div>
-              <div class="hsm-item"><small>Active Users</small><b>18.6K</b></div>
-              <div class="hsm-item"><small>SLA Uptime</small><b>99.99%</b></div>
-            </div>
+            <em>▲ 38% this quarter</em>
           </div>
-
-          <!-- Chart Area -->
-          <div class="hwin-chart-wrap">
-            <svg class="hwin-chart" viewBox="0 0 500 130" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="heroGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#F6660F" stop-opacity="0.32"/>
-                  <stop offset="100%" stop-color="#F6660F" stop-opacity="0.0"/>
-                </linearGradient>
-              </defs>
-              <path class="hwin-area" d="M0 110 C 50 100, 90 80, 140 85 S 210 55, 260 50 S 340 65, 380 35 S 440 20, 500 10 L500 130 L0 130 Z"/>
-              <path class="hwin-line" d="M0 110 C 50 100, 90 80, 140 85 S 210 55, 260 50 S 340 65, 380 35 S 440 20, 500 10"/>
-              <circle cx="260" cy="50" r="4.5" class="hwin-dot"/>
-              <circle cx="500" cy="10" r="5" class="hwin-dot pulse"/>
-            </svg>
-          </div>
-
-          <!-- Integrated Team / Release Strip -->
-          <div class="hwin-squad-strip">
-            <div class="hwin-squad-photo">
-              <img src="assets/images/hero/hero-team.jpg" alt="Dedicated ShopSync squad" loading="eager" decoding="async">
-            </div>
-            <div class="hwin-squad-info">
-              <b>Dedicated Product Squad Active</b>
-              <span>Sprint 14 in progress · London &amp; Dhaka Hubs</span>
-            </div>
-            <div class="hwin-squad-state">
-              <span class="status-indicator"></span> 0 blockers
-            </div>
+          <svg class="hmc-chart" viewBox="0 0 340 75" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="hmcGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F6660F" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#F6660F" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <path class="hmc-area" d="M0 65 C 35 60, 60 46, 95 50 S 150 32, 195 28 S 250 38, 280 18 S 315 10, 340 5 L340 75 L0 75 Z"/>
+            <path class="hmc-line" d="M0 65 C 35 60, 60 46, 95 50 S 150 32, 195 28 S 250 38, 280 18 S 315 10, 340 5"/>
+          </svg>
+          <div class="hmc-stats">
+            <div><b>18.6K</b><span>Active users</span></div>
+            <div><b>4.8%</b><span>Conversion</span></div>
+            <div><b>99.9%</b><span>Uptime</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Floating Bottom Badge -->
-      <div class="hero-float-badge hfb-bottom">
-        <div class="hfb-icon lead-ic"><i data-lucide="zap"></i></div>
-        <div class="hfb-text">
-          <b>New Enterprise Lead</b>
-          <span>Sarah · FinTech · Synced to CRM</span>
+      <!-- Bottom Right Floating Lead Badge -->
+      <div class="his-badge his-badge-bottom">
+        <div class="his-ico check"><i data-lucide="check"></i></div>
+        <div class="his-txt">
+          <b>New lead captured</b>
+          <span>Sarah · Enterprise plan</span>
         </div>
       </div>
     </div>
