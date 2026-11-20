@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us &amp; Start a Project — ShopSync Technologies</title>
-  <meta name="description" content="Get in touch with ShopSync Technologies. Request a free architectural consultation or project estimate. We reply within 4 hours." />
+  <title>Contact — ShopSync Technologies</title>
+  <meta name="description" content="Request a free architecture consultation or project proposal. We reply within 4 hours." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pro.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/images.css" />
+  <link rel="stylesheet" href="css/type.css" />
 </head>
-<body>
-
-<!-- ══════════════════════ NAVBAR ════════════════════════════ -->
+<body class="home">
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
@@ -27,13 +30,12 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
 
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary" style="padding:10px 22px;font-size:.87rem;">
-        Get Started
+        Get a Free Quote
         <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
       </a>
     </div>
@@ -52,61 +54,40 @@
   <a href="services.html">Services</a>
   <a href="case-studies.html">Case Studies</a>
   <a href="about.html">About Us</a>
-  <a href="pricing.html">Pricing</a>
   <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Get Started</a>
+  <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
 </div>
 
-<!-- ══════════════════════ PAGE HERO ══════════════════════════ -->
-<header class="page-hero">
-  <div class="page-hero-orb page-hero-orb-1"></div>
-  <div class="page-hero-orb page-hero-orb-2"></div>
-  <div class="container page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <i data-lucide="chevron-right"></i>
-      <span>Contact</span>
-    </div>
-    <div class="chip">
-      <span class="chip-dot"></span>
-      Start a Conversation
-    </div>
-    <h1>Let’s Turn Your Vision Into <span class="g-text">Production Code</span></h1>
-    <p>Whether you need an entire product built from scratch or senior engineers to accelerate your roadmap, our technical leads are ready to collaborate.</p>
-  </div>
-</header>
 
-<!-- ══════════════════════ CONTACT CONTENT ════════════════════ -->
-<section class="section" style="background:var(--bg);">
-  <div class="container">
 
-    <div class="contact-page-layout">
 
-      <!-- Left: Form -->
-      <div class="card reveal" style="padding:44px 38px;border-radius:24px;">
-        <h3 style="font-family:var(--ff-head);font-size:1.6rem;margin-bottom:8px;">Send Us a Message</h3>
-        <p style="color:var(--text2);font-size:.9rem;margin-bottom:28px;">Fill out this brief overview and our solution architect will review your requirements.</p>
-
-        <form id="contactForm">
+<header class="p-hero"><div class="container">
+  <div class="crumb"><a href="index.html">Home</a><i data-lucide="chevron-right" style="width:14px;height:14px"></i><span>Contact</span></div>
+  <span class="eyebrow reveal">Contact</span>
+  <h1 class="reveal">Let's turn your vision into <em>production code</em>.</h1>
+  <p class="lede reveal">Whether you need a product built from scratch or senior engineers to accelerate your roadmap, our technical leads are ready.</p>
+</div></header>
+<section class="hsec" style="padding-top:30px"><div class="container ct-grid">
+  <div class="ct-form reveal"><h3>Send us a message</h3><p style="color:var(--text2);margin-bottom:26px">Share a brief overview and a solution architect will review your requirements.</p><form id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="cName">Your Name *</label>
-              <input type="text" id="cName" placeholder="e.g. Alex Morgan" required />
+              <input type="text" id="cName" name="name" placeholder="e.g. Alex Morgan" required />
             </div>
             <div class="form-group">
               <label for="cEmail">Work Email *</label>
-              <input type="email" id="cEmail" placeholder="alex@company.com" required />
+              <input type="email" id="cEmail" name="email" placeholder="alex@company.com" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="cCompany">Company / Project Name</label>
-              <input type="text" id="cCompany" placeholder="e.g. Acme Health" />
+              <input type="text" id="cCompany" name="company" placeholder="e.g. Acme Health" />
             </div>
             <div class="form-group">
               <label for="cService">Primary Need</label>
-              <select id="cService">
+              <select id="cService" name="service">
                 <option value="saas">Custom SaaS Platform</option>
                 <option value="ai">Enterprise AI &amp; RAG</option>
                 <option value="mobile">Mobile Application (iOS/Android)</option>
@@ -118,19 +99,10 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group">
-              <label for="cBudget">Approximate Budget</label>
-              <select id="cBudget">
-                <option value="4k-10k">$4,500 – $10,000</option>
-                <option value="10k-25k">$10,000 – $25,000</option>
-                <option value="25k-50k">$25,000 – $50,000</option>
-                <option value="50k+">$50,000+</option>
-                <option value="undecided">Undecided / Flexible</option>
-              </select>
-            </div>
+            
             <div class="form-group">
               <label for="cTimeline">Target Timeline</label>
-              <select id="cTimeline">
+              <select id="cTimeline" name="timeline">
                 <option value="urgent">Immediately (&lt; 1 month)</option>
                 <option value="standard" selected>1 – 3 months</option>
                 <option value="planning">3 – 6 months (Planning phase)</option>
@@ -140,151 +112,98 @@
 
           <div class="form-group">
             <label for="cMessage">Project Overview &amp; Goals *</label>
-            <textarea id="cMessage" placeholder="Tell us about what you want to build, existing tech stack (if any), and key milestones..." required></textarea>
+            <textarea id="cMessage" name="message" placeholder="Tell us about what you want to build, existing tech stack (if any), and key milestones..." required></textarea>
           </div>
 
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-            <input type="checkbox" id="cNDA" style="width:18px;height:18px;accent-color:var(--g1);cursor:pointer;" />
+            <input type="checkbox" id="cNDA" name="nda" style="width:18px;height:18px;accent-color:var(--g1);cursor:pointer;" />
             <label for="cNDA" style="font-size:.85rem;color:var(--text2);cursor:pointer;">I would like a mutual Non-Disclosure Agreement (NDA) signed before sharing confidential specifications.</label>
           </div>
 
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="btn btn-primary form-submit">
             Send Message <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
           </button>
-        </form>
-      </div>
+        </form></div>
+  <div class="ct-side stagger"><figure class="slot ct-photo"><img data-slot src="assets/images/contact/support.jpg" alt="ShopSync support team" loading="lazy" decoding="async"></figure><div class="ct-card dk"><div class="ci"><i data-lucide="clock"></i></div><div><h4>4-hour response guarantee</h4><p>Every inquiry goes to a senior technical director, not a junior salesperson.</p></div></div><div class="ct-card"><div class="ci"><i data-lucide="mail"></i></div><div><h4>Email us</h4><p><a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a></p></div></div><div class="ct-card"><div class="ci"><i data-lucide="phone-call"></i></div><div><h4>Call or WhatsApp</h4><p><a href="tel:+8801719272845">+880 1719-272845</a><br>Sat – Thu, 9 AM – 6 PM BST</p></div></div><div class="ct-card"><div class="ci"><i data-lucide="map-pin"></i></div><div><h4>Global presence</h4><p>San Francisco · London · Dhaka<br>Moulvibazar, Sylhet, Bangladesh</p></div></div></div>
+</div></section>
 
-      <!-- Right: Direct Contact & Global Offices -->
-      <div class="reveal" style="transition-delay:.15s;">
-
-        <!-- Response Guarantee -->
-        <div class="contact-direct-card" style="background:linear-gradient(135deg,rgba(249,115,22,.08) 0%,rgba(249,115,22,.02) 100%);border-color:var(--border-h);">
-          <div class="cdc-icon">
-            <i data-lucide="clock"></i>
-          </div>
-          <div class="cdc-content">
-            <h4>4-Hour Response Guarantee</h4>
-            <p>Every inquiry is routed directly to a senior technical director, not a junior salesperson. Expect a thoughtful preliminary analysis.</p>
-          </div>
-        </div>
-
-        <!-- Direct Email -->
-        <div class="contact-direct-card">
-          <div class="cdc-icon">
-            <i data-lucide="mail"></i>
-          </div>
-          <div class="cdc-content">
-            <h4>Direct Technical Inquiries</h4>
-            <p>Email our engineering leadership directly:</p>
-            <a href="mailto:hello@shopsynctech.com">hello@shopsynctech.com</a>
-          </div>
-        </div>
-
-        <!-- Direct Phone -->
-        <div class="contact-direct-card">
-          <div class="cdc-icon">
-            <i data-lucide="phone-call"></i>
-          </div>
-          <div class="cdc-content">
-            <h4>Call or WhatsApp</h4>
-            <p>Available Mon–Fri, 9:00 AM – 7:00 PM EST:</p>
-            <a href="tel:+18005550199">+1 (800) 555-0199</a>
-          </div>
-        </div>
-
-        <!-- Offices -->
-        <div class="contact-direct-card">
-          <div class="cdc-icon">
-            <i data-lucide="map-pin"></i>
-          </div>
-          <div class="cdc-content">
-            <h4>Global Presence</h4>
-            <p style="margin-bottom:8px;"><strong>Silicon Valley:</strong> 548 Market St, San Francisco, CA</p>
-            <p style="margin-bottom:8px;"><strong>Europe Hub:</strong> 1 Canada Square, Canary Wharf, London</p>
-            <p><strong>Engineering Center:</strong> Dhaka High-Tech Hub, Bangladesh</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════ FOOTER ════════════════════════════ -->
 <footer id="footer">
   <div class="container">
+
+    <!-- Footer top strip -->
     <div class="footer-top-strip">
-      <div>
-        <span class="fts-tag">Let's talk tech</span>
-        <h3>Ready to build your next breakthrough product?</h3>
+      <div class="fts-left">
+        <span class="fts-tag">Ready to Build Something Great?</span>
+        <h3>Let's turn your <span class="g-text">idea into reality</span></h3>
       </div>
-      <a href="contact.html" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;">
-        Get Started <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+      <a href="#contact" class="btn btn-primary">
+        Start a Project
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
       </a>
     </div>
 
     <div class="footer-divider-line"></div>
 
     <div class="footer-grid">
+
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="margin-bottom:4px;">
-          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync" />
+        <a href="#hero" class="nav-logo" style="display:inline-flex;">
+          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
           <span class="logo-text">ShopSync<span>.</span></span>
         </a>
-        <p>A full-service engineering company helping high-growth startups and enterprises build world-class software products.</p>
-        <div class="soc-links">
-          <a href="https://github.com" class="soc-link" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
-          <a href="https://linkedin.com" class="soc-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-          <a href="https://twitter.com" class="soc-link" target="_blank" rel="noopener" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        <p>Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.</p>
+        <div class="social-row">
+          <a href="https://web.facebook.com/shopsynctech" target="_blank" rel="noopener" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:admin@shopsynctech.com" class="soc-link"><i data-lucide="mail" style="width:17px;height:17px;"></i></a>
+          <a href="tel:+8801719272845" class="soc-link"><i data-lucide="phone" style="width:17px;height:17px;"></i></a>
         </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Custom SaaS Engineering</a></li>
+          <li><a href="services.html">Enterprise AI &amp; RAG</a></li>
+          <li><a href="services.html">Mobile Applications</a></li>
+          <li><a href="services.html">Cloud DevOps &amp; Kubernetes</a></li>
+          <li><a href="services.html">UI/UX Design Systems</a></li>
+        </ul>
       </div>
 
       <div class="footer-col">
         <h5>Navigation</h5>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services &amp; Capabilities</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="about.html">About Company</a></li>
-          <li><a href="pricing.html">Pricing &amp; Models</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Solutions</h5>
+        <h5>Contact</h5>
         <ul>
-          <li><a href="services.html">Custom SaaS Development</a></li>
-          <li><a href="services.html">Enterprise AI &amp; RAG</a></li>
-          <li><a href="services.html">iOS &amp; Android Apps</a></li>
-          <li><a href="services.html">DevOps &amp; Kubernetes</a></li>
-          <li><a href="services.html">UI/UX Design Systems</a></li>
+          <li><a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a></li>
+          <li><a href="tel:+8801719272845">+880 1719-272845</a></li>
+          <li><a href="#contact">Start a Project</a></li>
+          <li><a href="#contact">Schedule a Call</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h5>Locations &amp; Contact</h5>
-        <ul>
-          <li><a href="mailto:hello@shopsynctech.com">hello@shopsynctech.com</a></li>
-          <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
-          <li><span>San Francisco, CA &bull; London &bull; Dhaka</span></li>
-          <li><span style="color:var(--g1);font-weight:600;">Response within 4 hours</span></li>
-        </ul>
-      </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 ShopSync Technologies. All rights reserved.</p>
-      <div style="display:flex;gap:20px;">
-        <a href="privacy-policy.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Privacy Policy</a>
-        <a href="terms-of-service.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Terms of Service</a>
-      </div>
+      <p>&copy; 2026 <span>ShopSync Technologies</span>. All rights reserved.</p>
+      <p><a href="privacy-policy.html" style="color:rgba(255,255,255,.45);transition:.25s;">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="terms-of-service.html" style="color:rgba(255,255,255,.45);transition:.25s;">Terms of Service</a></p>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/images.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

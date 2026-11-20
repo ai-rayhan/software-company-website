@@ -1,0 +1,28 @@
+/* ShopSync — typography system: Plus Jakarta Sans (headings) + Inter (body), fluid scale */
+:root{
+  --ff-head:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ff-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+/* Everything sized in rem scales with the viewport: ~15px phones -> 17px large screens */
+html{font-size:clamp(15px,14.2px + .26vw,17px);-webkit-text-size-adjust:100%}
+body{font-size:1rem;line-height:1.7;color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-feature-settings:'cv11','ss03'}
+h1,h2,h3,h4,h5{font-family:var(--ff-head);font-weight:700;text-wrap:balance;letter-spacing:-.02em}
+p,li,blockquote{text-wrap:pretty}
+.h-hero h1{font-size:clamp(2.3rem,1.55rem + 3.7vw,4.3rem);line-height:1.08;letter-spacing:-.032em;font-weight:800}
+.p-hero h1{font-size:clamp(2.1rem,1.5rem + 3vw,3.7rem);line-height:1.1;letter-spacing:-.03em;font-weight:800}
+.h2,.sec-head h2{font-size:clamp(1.75rem,1.25rem + 2.2vw,2.95rem);line-height:1.15;letter-spacing:-.028em;font-weight:800}
+.lede{font-size:clamp(1rem,.94rem + .35vw,1.2rem);line-height:1.75}
+.eyebrow{font-size:.78rem;letter-spacing:.1em}
+.btn{font-size:.95rem;font-weight:600;letter-spacing:0}
+.btn-lg{font-size:1rem;padding:.95rem 2rem}
+.stat b,.plan .price,.bigstats b{letter-spacing:-.035em}
+.nav-links a{font-size:.92rem;font-weight:600}
+.rc-b h3,.card2 h4,.ps h4{letter-spacing:-.015em}
+.faq-q{font-size:1.02rem}
+/* min readable sizes for small print */
+small,.crumb,.win-bar span{font-size:max(.78rem,12px)}
+@media(max-width:560px){
+  .h-hero h1,.p-hero h1{letter-spacing:-.025em}
+  .btn-lg{width:100%;justify-content:center}
+  .h-actions{width:100%}
+}

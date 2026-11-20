@@ -3,7 +3,7 @@
 /* ── Navbar scroll ─────────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
 /* ── Mobile nav ────────────────────────────────── */
@@ -75,22 +75,6 @@ const cntObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-target]').forEach(el => cntObs.observe(el));
-
-/* ── Contact form ──────────────────────────────── */
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const btn = this.querySelector('.form-submit');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = 'Message Sent! <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-    this.reset();
-    setTimeout(() => {
-      btn.innerHTML = 'Send Message';
-      btn.disabled = false;
-    }, 3500);
-  }, 1400);
-});
 
 /* ── Tech stack slider ─────────────────────────── */
 (function () {

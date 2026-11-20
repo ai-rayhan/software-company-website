@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin — ShopSync</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <section id="loginView" class="login hidden">
+    <form id="loginForm" class="login-card">
+      <img src="assets/logo.png" alt="" class="login-logo" />
+      <h1>ShopSync Admin</h1>
+      <p>Sign in to manage inquiries and subscribers.</p>
+      <label>Email<input type="email" id="lEmail" required autocomplete="username" /></label>
+      <label>Password<input type="password" id="lPass" required autocomplete="current-password" /></label>
+      <div class="err" id="loginErr"></div>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <div id="appView" class="hidden">
+    <header class="top">
+      <div class="brand"><img src="assets/logo.png" alt="" /><b>ShopSync</b><span>Admin</span></div>
+      <div class="top-r"><span id="meEmail"></span><a class="btn ghost" href="/api/admin/export.csv">Export CSV</a><button class="btn ghost" id="logoutBtn">Sign out</button></div>
+    </header>
+    <main>
+      <div class="kpis" id="kpis"></div>
+      <div class="tabs">
+        <button class="tab active" data-tab="inq">Inquiries</button>
+        <button class="tab" data-tab="subs">Subscribers</button>
+      </div>
+      <section id="tabInq">
+        <div class="filters">
+          <input id="search" placeholder="Search name, email, message…" />
+          <select id="statusFilter">
+            <option value="">All statuses</option><option value="new">New</option>
+            <option value="in_progress">In progress</option><option value="closed">Closed</option>
+          </select>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Date</th><th>Contact</th><th>Project</th><th>Status</th><th></th></tr></thead>
+          <tbody id="inqBody"></tbody>
+        </table></div>
+      </section>
+      <section id="tabSubs" class="hidden">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Email</th><th>Subscribed</th></tr></thead>
+          <tbody id="subBody"></tbody>
+        </table></div>
+      </section>
+    </main>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>

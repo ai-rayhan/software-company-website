@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Studies & Work — ShopSync Technologies</title>
-  <meta name="description" content="Explore real-world case studies from ShopSync Technologies: Fintech platforms, HealthTech apps, AI Copilots, and Cloud Modernization." />
+  <title>Case Studies — ShopSync Technologies</title>
+  <meta name="description" content="Real engineering challenges and measurable results across fintech, AI, healthtech and logistics." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pro.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/images.css" />
+  <link rel="stylesheet" href="css/type.css" />
 </head>
-<body>
-
-<!-- ══════════════════════ NAVBAR ════════════════════════════ -->
+<body class="home">
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
@@ -27,13 +30,12 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="case-studies.html" class="active">Case Studies</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary" style="padding:10px 22px;font-size:.87rem;">
-        Get Started
+        Get a Free Quote
         <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
       </a>
     </div>
@@ -52,294 +54,108 @@
   <a href="services.html">Services</a>
   <a href="case-studies.html">Case Studies</a>
   <a href="about.html">About Us</a>
-  <a href="pricing.html">Pricing</a>
   <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Get Started</a>
+  <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
 </div>
 
-<!-- ══════════════════════ PAGE HERO ══════════════════════════ -->
-<header class="page-hero">
-  <div class="page-hero-orb page-hero-orb-1"></div>
-  <div class="page-hero-orb page-hero-orb-2"></div>
-  <div class="container page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <i data-lucide="chevron-right"></i>
-      <span>Portfolio</span>
-    </div>
-    <div class="chip">
-      <span class="chip-dot"></span>
-      Client Success Stories
-    </div>
-    <h1>Case Studies in High-Stakes <span class="g-text">Engineering</span></h1>
-    <p>Real-world engineering challenges, architectural blueprints, and measurable business outcomes delivered for leading startups and enterprise brands worldwide.</p>
-  </div>
-</header>
 
-<!-- ══════════════════════ STATS BAND ════════════════════════ -->
-<section id="stats-band" style="padding-block:50px;">
-  <div class="container">
-    <div class="stats-band-grid">
-      <div class="sb-item">
-        <span class="sb-num">150+</span>
-        <span class="sb-label">Systems Shipped</span>
-        <span class="sb-sub">Across 18 Countries</span>
-      </div>
-      <div class="sb-item">
-        <span class="sb-num">$45M+</span>
-        <span class="sb-label">Client Revenue</span>
-        <span class="sb-sub">Transacted Daily</span>
-      </div>
-      <div class="sb-item">
-        <span class="sb-num">99.99%</span>
-        <span class="sb-label">Production SLA</span>
-        <span class="sb-sub">Zero Mission-Critical Outages</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ══════════════════════ DETAILED CASE STUDIES ══════════════ -->
-<section class="section" style="background:var(--bg);">
-  <div class="container">
 
-    <!-- Case Study 1: OmniFlow Fintech -->
-    <div class="cs-detail-card reveal">
-      <div class="cs-detail-img">
-        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&q=80&auto=format&fit=crop" alt="OmniFlow Fintech Settlement" />
-      </div>
-      <div class="cs-detail-body">
-        <div class="cs-tag-strip">
-          <span class="cs-pill accent">Fintech</span>
-          <span class="cs-pill">Go &bull; Kafka &bull; PostgreSQL</span>
-          <span class="cs-pill">PCI-DSS Level 1</span>
-        </div>
-        <h3>OmniFlow: Real-Time Cross-Border Settlement Engine</h3>
-        <p><strong>The Challenge:</strong> OmniFlow required a resilient payment engine capable of settling multi-currency FX payments with sub-10ms ledger finality while adhering to strict banking regulations.</p>
-        <p><strong>Our Solution:</strong> ShopSync engineered an event-driven Go microservices cluster backed by Apache Kafka, zero-downtime distributed Redis locks, and double-entry accounting guarantees.</p>
-        <div class="cs-metrics-row">
-          <div class="cs-mr-item">
-            <h5>15,000</h5>
-            <span>TPS Peak Throughput</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>8ms</h5>
-            <span>Average Finality</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>$3.2B</h5>
-            <span>Annual Volume</span>
-          </div>
-        </div>
-        <blockquote style="font-size:.88rem;color:var(--text2);border-left:3px solid var(--g1);padding-left:14px;margin-bottom:20px;font-style:italic;">
-          &ldquo;ShopSync delivered an institutional-grade financial engine that passed our SOC 2 and banking audits on the first pass.&rdquo;
-          <br><strong style="font-style:normal;color:var(--text);font-size:.82rem;">— Julian Sterling, VP Engineering at OmniFlow</strong>
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- Case Study 2: VaultAI Legal Copilot -->
-    <div class="cs-detail-card reveal">
-      <div class="cs-detail-body">
-        <div class="cs-tag-strip">
-          <span class="cs-pill accent">Enterprise AI</span>
-          <span class="cs-pill">Claude 3.5 &bull; Qdrant &bull; FastAPI</span>
-          <span class="cs-pill">SOC 2 Type II</span>
-        </div>
-        <h3>VaultAI: Context-Aware Enterprise Contract Copilot</h3>
-        <p><strong>The Challenge:</strong> Global law firms and enterprise procurement teams spent hundreds of hours parsing 80+ page master service agreements to identify liability clauses and regulatory risks.</p>
-        <p><strong>Our Solution:</strong> We architected a privacy-first RAG pipeline using hybrid dense-sparse vector indexing, AST semantic chunking, and deterministic citation verification.</p>
-        <div class="cs-metrics-row">
-          <div class="cs-mr-item">
-            <h5>95%</h5>
-            <span>Time Saved Per Audit</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>99.4%</h5>
-            <span>Citation Accuracy</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>Zero</h5>
-            <span>Data Retention Leaks</span>
-          </div>
-        </div>
-        <blockquote style="font-size:.88rem;color:var(--text2);border-left:3px solid var(--g1);padding-left:14px;margin-bottom:20px;font-style:italic;">
-          &ldquo;The hallucination mitigation techniques ShopSync implemented gave our enterprise clients the confidence to adopt AI safely.&rdquo;
-          <br><strong style="font-style:normal;color:var(--text);font-size:.82rem;">— Elena Rostova, Founder &amp; CEO of VaultAI</strong>
-        </blockquote>
-      </div>
-      <div class="cs-detail-img">
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=80&auto=format&fit=crop" alt="VaultAI Legal Copilot" />
-      </div>
-    </div>
-
-    <!-- Case Study 3: MedPulse HealthTech -->
-    <div class="cs-detail-card reveal">
-      <div class="cs-detail-img">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80&auto=format&fit=crop" alt="MedPulse Telehealth App" />
-      </div>
-      <div class="cs-detail-body">
-        <div class="cs-tag-strip">
-          <span class="cs-pill accent">HealthTech</span>
-          <span class="cs-pill">React Native &bull; WebRTC &bull; AWS HealthLake</span>
-          <span class="cs-pill">HIPAA Verified</span>
-        </div>
-        <h3>MedPulse: Telehealth &amp; Remote Patient Monitoring</h3>
-        <p><strong>The Challenge:</strong> Scaling high-definition, encrypted video consultations and live Bluetooth vitals sync for cardiac care patients in rural low-bandwidth regions.</p>
-        <p><strong>Our Solution:</strong> ShopSync engineered a cross-platform mobile app featuring adaptive bitrate WebRTC streaming, local SQLite encrypted offline storage, and instant biometrics alerts for doctors.</p>
-        <div class="cs-metrics-row">
-          <div class="cs-mr-item">
-            <h5>450k+</h5>
-            <span>Active Patients</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>4.9 ★</h5>
-            <span>App Store Rating</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>&lt; 300ms</h5>
-            <span>Vitals Sync Speed</span>
-          </div>
-        </div>
-        <blockquote style="font-size:.88rem;color:var(--text2);border-left:3px solid var(--g1);padding-left:14px;margin-bottom:20px;font-style:italic;">
-          &ldquo;ShopSync felt like our internal team. Their commitment to HIPAA compliance and performance saved our seed round.&rdquo;
-          <br><strong style="font-style:normal;color:var(--text);font-size:.82rem;">— Dr. Aaron Thorne, Chief Medical Officer at MedPulse</strong>
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- Case Study 4: NexusLogistics -->
-    <div class="cs-detail-card reveal">
-      <div class="cs-detail-body">
-        <div class="cs-tag-strip">
-          <span class="cs-pill accent">Logistics IoT</span>
-          <span class="cs-pill">Node.js &bull; Rust &bull; Kubernetes</span>
-          <span class="cs-pill">Global Tracking</span>
-        </div>
-        <h3>NexusLogistics: AI Fleet &amp; Aircraft Cargo Orchestration</h3>
-        <p><strong>The Challenge:</strong> Air and sea freight cargo terminals suffered from severe bottleneck delays due to manual flight slot allocation and paper-based customs manifests.</p>
-        <p><strong>Our Solution:</strong> We created a unified real-time dispatch dashboard with automated capacity optimization, live GPS telemetry processing, and automatic air waybill verification.</p>
-        <div class="cs-metrics-row">
-          <div class="cs-mr-item">
-            <h5>-55%</h5>
-            <span>Terminal Wait Time</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>100%</h5>
-            <span>Digital Compliance</span>
-          </div>
-          <div class="cs-mr-item">
-            <h5>$2.8M</h5>
-            <span>Annual Cost Saved</span>
-          </div>
-        </div>
-        <blockquote style="font-size:.88rem;color:var(--text2);border-left:3px solid var(--g1);padding-left:14px;margin-bottom:20px;font-style:italic;">
-          &ldquo;Our daily airport turnaround dropped from 9 hours to under 4 hours. ShopSync's engineering made that possible.&rdquo;
-          <br><strong style="font-style:normal;color:var(--text);font-size:.82rem;">— Tariq Chowdhury, Managing Director at Nexus Cargo</strong>
-        </blockquote>
-      </div>
-      <div class="cs-detail-img">
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80&auto=format&fit=crop" alt="NexusLogistics Fleet" />
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════ CTA ════════════════════════════════ -->
-<section id="cta" class="section">
-  <div class="container reveal">
-    <div class="chip" style="margin-bottom:28px;">
-      <span class="chip-dot"></span>
-      Your Success Story Starts Here
-    </div>
-    <h2>Have a Mission-Critical<br><span class="g-text">Project in Mind?</span></h2>
-    <p>Let's build a software solution that your users love and your competitors admire.</p>
-    <div class="btn-group">
-      <a href="contact.html" class="btn btn-primary">
-        Start Your Project
-        <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
-      </a>
-      <a href="services.html" class="btn btn-ghost">
-        Explore Our Services
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════ FOOTER ════════════════════════════ -->
+<header class="p-hero"><div class="container">
+  <div class="crumb"><a href="index.html">Home</a><i data-lucide="chevron-right" style="width:14px;height:14px"></i><span>Case studies</span></div>
+  <span class="eyebrow reveal">Case studies</span>
+  <h1 class="reveal">High-stakes engineering, <em>measurable</em> outcomes.</h1>
+  <p class="lede reveal">Real challenges, architecture decisions and business results delivered for startups and enterprise brands worldwide.</p>
+</div></header>
+<section class="hsec" style="padding-top:0"><div class="container">
+  <div class="cstat stagger"><div><b>150+</b><span>Systems shipped</span><small>across 18 countries</small></div><div><b>$45M+</b><span>Client revenue</span><small>transacted daily</small></div><div><b>99.99%</b><span>Production SLA</span><small>zero mission-critical outages</small></div></div>
+  <div style="height:70px"></div>
+  <article class="cs reveal"><div class="cs-l g-o"><img class="bgimg" data-slot src="assets/images/cases/omniflow.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span><div><span class="tag" style="background:rgba(255,255,255,.2);color:#fff">Fintech</span><h3>OmniFlow: real-time cross-border settlement engine</h3></div><div><div class="stack" style="margin-bottom:20px"><span>Go</span><span>Kafka</span><span>PostgreSQL</span></div><div class="cs-m"><div><b>15,000</b><span>TPS peak</span></div><div><b>8ms</b><span>Finality</span></div><div><b>$3.2B</b><span>Annual volume</span></div></div></div></div>
+<div class="cs-r"><h5>The challenge</h5><p>A resilient engine to settle multi-currency FX payments with sub-10ms ledger finality under strict banking regulation.</p><h5>Our solution</h5><p>An event-driven Go microservice cluster on Kafka with distributed Redis locks and double-entry accounting guarantees.</p><blockquote>“An institutional-grade financial engine that passed our SOC 2 and banking audits on the first pass.”<cite>Julian Sterling, VP Engineering at OmniFlow</cite></blockquote></div></article><article class="cs reveal"><div class="cs-l g-k"><img class="bgimg" data-slot src="assets/images/cases/vaultai.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span><div><span class="tag" style="background:rgba(255,255,255,.2);color:#fff">Enterprise AI</span><h3>VaultAI: context-aware contract copilot</h3></div><div><div class="stack" style="margin-bottom:20px"><span>Claude</span><span>Qdrant</span><span>FastAPI</span></div><div class="cs-m"><div><b>95%</b><span>Time saved</span></div><div><b>99.4%</b><span>Citation accuracy</span></div><div><b>Zero</b><span>Leaks</span></div></div></div></div>
+<div class="cs-r"><h5>The challenge</h5><p>Procurement teams spent hundreds of hours reading 80+ page agreements to find liability clauses.</p><h5>Our solution</h5><p>A privacy-first RAG pipeline with hybrid dense-sparse indexing, semantic chunking and deterministic citation checks.</p><blockquote>“The hallucination mitigation gave our enterprise clients confidence to adopt AI safely.”<cite>Elena Rostova, Founder &amp; CEO at VaultAI</cite></blockquote></div></article><article class="cs reveal"><div class="cs-l g-o2"><img class="bgimg" data-slot src="assets/images/cases/medpulse.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span><div><span class="tag" style="background:rgba(255,255,255,.2);color:#fff">HealthTech</span><h3>MedPulse: telehealth &amp; remote patient monitoring</h3></div><div><div class="stack" style="margin-bottom:20px"><span>React Native</span><span>WebRTC</span><span>AWS HealthLake</span></div><div class="cs-m"><div><b>450k+</b><span>Patients</span></div><div><b>4.9★</b><span>App rating</span></div><div><b>300ms</b><span>Vitals sync</span></div></div></div></div>
+<div class="cs-r"><h5>The challenge</h5><p>Scale encrypted HD video visits and live Bluetooth vitals for cardiac patients on low-bandwidth rural networks.</p><h5>Our solution</h5><p>A cross-platform app with adaptive-bitrate WebRTC, encrypted offline storage and instant biometric sync.</p><blockquote>“ShopSync felt like our internal team. Their HIPAA focus saved our seed round.”<cite>Dr. Aaron Thorne, CMO at MedPulse</cite></blockquote></div></article><article class="cs reveal"><div class="cs-l g-k2"><img class="bgimg" data-slot src="assets/images/cases/nexus.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span><div><span class="tag" style="background:rgba(255,255,255,.2);color:#fff">Logistics IoT</span><h3>NexusLogistics: AI fleet &amp; cargo orchestration</h3></div><div><div class="stack" style="margin-bottom:20px"><span>Node.js</span><span>Rust</span><span>Kubernetes</span></div><div class="cs-m"><div><b>-55%</b><span>Wait time</span></div><div><b>100%</b><span>Digital compliance</span></div><div><b>$2.8M</b><span>Saved / year</span></div></div></div></div>
+<div class="cs-r"><h5>The challenge</h5><p>Cargo terminals lost hours to manual slot allocation and paper customs manifests.</p><h5>Our solution</h5><p>A unified real-time dispatch dashboard with capacity optimisation, live GPS telemetry and automatic waybill verification.</p><blockquote>“Our daily airport turnaround dropped from 9 hours to under 4.”<cite>Tariq Chowdhury, Managing Director at Nexus Cargo</cite></blockquote></div></article>
+</div></section>
+<div class="container" style="padding-block:60px"><div class="big-cta reveal zoom"><img class="bgimg" data-slot src="assets/images/cta/cta-bg.jpg" alt="" loading="lazy" decoding="async"><span class="shade"></span>
+  <h2 class="h2">Have a mission-critical project in mind?</h2><p>Let's build software your users love and your competitors admire.</p>
+  <div class="h-actions" style="justify-content:center;margin:0"><a href="contact.html" class="btn btn-primary btn-lg">Start your project <i data-lucide="arrow-right" style="width:17px;height:17px"></i></a><a href="services.html" class="btn btn-light btn-lg">Explore services</a></div>
+</div></div>
 <footer id="footer">
   <div class="container">
+
+    <!-- Footer top strip -->
     <div class="footer-top-strip">
-      <div>
-        <span class="fts-tag">Let's talk tech</span>
-        <h3>Ready to build your next breakthrough product?</h3>
+      <div class="fts-left">
+        <span class="fts-tag">Ready to Build Something Great?</span>
+        <h3>Let's turn your <span class="g-text">idea into reality</span></h3>
       </div>
-      <a href="contact.html" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;">
-        Get Started <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
+      <a href="#contact" class="btn btn-primary">
+        Start a Project
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
       </a>
     </div>
 
     <div class="footer-divider-line"></div>
 
     <div class="footer-grid">
+
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="margin-bottom:4px;">
-          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync" />
+        <a href="#hero" class="nav-logo" style="display:inline-flex;">
+          <img src="assets/logo.png" class="nav-logo-img" alt="ShopSync Technologies" />
           <span class="logo-text">ShopSync<span>.</span></span>
         </a>
-        <p>A full-service engineering company helping high-growth startups and enterprises build world-class software products.</p>
-        <div class="soc-links">
-          <a href="https://github.com" class="soc-link" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
-          <a href="https://linkedin.com" class="soc-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-          <a href="https://twitter.com" class="soc-link" target="_blank" rel="noopener" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        <p>Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.</p>
+        <div class="social-row">
+          <a href="https://web.facebook.com/shopsynctech" target="_blank" rel="noopener" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:admin@shopsynctech.com" class="soc-link"><i data-lucide="mail" style="width:17px;height:17px;"></i></a>
+          <a href="tel:+8801719272845" class="soc-link"><i data-lucide="phone" style="width:17px;height:17px;"></i></a>
         </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Custom SaaS Engineering</a></li>
+          <li><a href="services.html">Enterprise AI &amp; RAG</a></li>
+          <li><a href="services.html">Mobile Applications</a></li>
+          <li><a href="services.html">Cloud DevOps &amp; Kubernetes</a></li>
+          <li><a href="services.html">UI/UX Design Systems</a></li>
+        </ul>
       </div>
 
       <div class="footer-col">
         <h5>Navigation</h5>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services &amp; Capabilities</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="about.html">About Company</a></li>
-          <li><a href="pricing.html">Pricing &amp; Models</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Solutions</h5>
+        <h5>Contact</h5>
         <ul>
-          <li><a href="services.html">Custom SaaS Development</a></li>
-          <li><a href="services.html">Enterprise AI &amp; RAG</a></li>
-          <li><a href="services.html">iOS &amp; Android Apps</a></li>
-          <li><a href="services.html">DevOps &amp; Kubernetes</a></li>
-          <li><a href="services.html">UI/UX Design Systems</a></li>
+          <li><a href="mailto:admin@shopsynctech.com">admin@shopsynctech.com</a></li>
+          <li><a href="tel:+8801719272845">+880 1719-272845</a></li>
+          <li><a href="#contact">Start a Project</a></li>
+          <li><a href="#contact">Schedule a Call</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h5>Locations &amp; Contact</h5>
-        <ul>
-          <li><a href="mailto:hello@shopsynctech.com">hello@shopsynctech.com</a></li>
-          <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
-          <li><span>San Francisco, CA &bull; London &bull; Dhaka</span></li>
-          <li><span style="color:var(--g1);font-weight:600;">Response within 4 hours</span></li>
-        </ul>
-      </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 ShopSync Technologies. All rights reserved.</p>
-      <div style="display:flex;gap:20px;">
-        <a href="privacy-policy.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Privacy Policy</a>
-        <a href="terms-of-service.html" style="font-size:.82rem;color:rgba(255,255,255,.45);">Terms of Service</a>
-      </div>
+      <p>&copy; 2026 <span>ShopSync Technologies</span>. All rights reserved.</p>
+      <p><a href="privacy-policy.html" style="color:rgba(255,255,255,.45);transition:.25s;">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="terms-of-service.html" style="color:rgba(255,255,255,.45);transition:.25s;">Terms of Service</a></p>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/api.js"></script>
+<script src="js/images.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

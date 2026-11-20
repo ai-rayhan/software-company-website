@@ -1,0 +1,9 @@
+{
+  "name": "shopsync-website",
+  "private": true,
+  "scripts": {
+    "install:server": "npm --prefix server install",
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  }
+}
