@@ -17,17 +17,20 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const JWT_SECRET = process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex');
 if (!process.env.JWT_SECRET) console.warn('[warn] JWT_SECRET not set — admin sessions reset on restart.');
 
-/* ── Seed admin ─────────────────────────────────────────── */
+/* ── Seed / sync admin ─────────────────────────────────────────── */
 (function seedAdmin() {
   const email = (process.env.ADMIN_EMAIL || 'admin@shopsynctech.com').toLowerCase();
-  let pass = process.env.ADMIN_PASSWORD;
-  const existing = db.get('SELECT id FROM admins WHERE email = ?', [email]);
-  if (existing) return;
-  if (!pass) {
-    pass = crypto.randomBytes(9).toString('base64url');
-    console.log(`[setup] Admin created → ${email} / ${pass}  (set ADMIN_PASSWORD in server/.env to choose your own)`);
+  const pass = process.env.ADMIN_PASSWORD || 'ShopSync2026!Secure';
+  const existing = db.get('SELECT id, password_hash FROM admins WHERE email = ?', [email]);
+  if (existing) {
+    if (!bcrypt.compareSync(pass, existing.password_hash)) {
+      db.run('UPDATE admins SET password_hash = ? WHERE id = ?', [bcrypt.hashSync(pass, 10), existing.id]);
+      console.log(`[setup] Admin password updated for ${email}`);
+    }
+    return;
   }
   db.run('INSERT INTO admins (email, password_hash) VALUES (?, ?)', [email, bcrypt.hashSync(pass, 10)]);
+  console.log(`[setup] Admin created → ${email}`);
 })();
 
 /* ── Mail (optional) ────────────────────────────────────── */
@@ -72,7 +75,7 @@ app.use(cookieParser());
 
 const formLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 12, standardHeaders: true, legacyHeaders: false,
   message: { ok: false, error: 'Too many submissions. Please try again in a few minutes.' } });
-const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 8, standardHeaders: true, legacyHeaders: false,
+const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 100, standardHeaders: true, legacyHeaders: false,
   message: { ok: false, error: 'Too many login attempts. Try again later.' } });
 
 /* ── Validation helpers ─────────────────────────────────── */
