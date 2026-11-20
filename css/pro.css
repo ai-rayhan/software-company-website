@@ -100,7 +100,7 @@ html{scroll-padding-top:84px}
 .d-line i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--o2),var(--o));border-radius:inherit;animation:fill 6s ease-in-out infinite}
 .d-line:nth-child(2) i{animation-delay:.6s}.d-line:nth-child(3) i{animation-delay:1.2s}
 @keyframes fill{0%{width:0}35%,85%{width:var(--w,80%)}100%{width:0}}
-.d-pop{position:absolute;z-index:2;background:var(--k);color:#fff;border-radius:14px;padding:12px 16px;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 14px 34px rgba(0,0,0,.28);opacity:0;animation:pop 6s ease-in-out infinite}
+.d-pop{display:none!important}
 .d-pop b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--o)}
 .d-pop.a{right:22px;bottom:26px;animation-delay:2.4s}.d-pop.b{left:22px;bottom:70px;animation-delay:3.2s;background:#fff;color:var(--k);border:1px solid var(--border)}
 @keyframes pop{0%,28%{opacity:0;transform:translateY(16px) scale(.9)}38%,80%{opacity:1;transform:none}92%,100%{opacity:0;transform:translateY(-8px)}}
