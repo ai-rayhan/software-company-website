@@ -62,8 +62,26 @@ CREATE TABLE IF NOT EXISTS career_roles (
   sort_order INTEGER NOT NULL DEFAULT 0,
   active INTEGER NOT NULL DEFAULT 1
 );
+CREATE TABLE IF NOT EXISTS company_info (
+  id INTEGER PRIMARY KEY,
+  company_name TEXT NOT NULL DEFAULT 'ShopSync Technologies',
+  email TEXT NOT NULL DEFAULT 'admin@shopsynctech.com',
+  phone TEXT NOT NULL DEFAULT '+880 1719-272845',
+  address TEXT NOT NULL DEFAULT 'Moulvibazar, Sylhet, Bangladesh',
+  presence TEXT NOT NULL DEFAULT 'San Francisco · London · Dhaka\nMoulvibazar, Sylhet, Bangladesh',
+  hours TEXT NOT NULL DEFAULT 'Sat – Thu, 9:00 AM – 6:00 PM BST',
+  tagline TEXT NOT NULL DEFAULT 'Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.',
+  facebook_url TEXT NOT NULL DEFAULT 'https://web.facebook.com/shopsynctech',
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
 CREATE INDEX IF NOT EXISTS idx_inq_status ON inquiries(status, created_at);
 `);
+
+// Seed default company info if not present
+if (!db.get('SELECT id FROM company_info WHERE id = 1')) {
+  db.run(`INSERT INTO company_info (id, company_name, email, phone, address, presence, hours, tagline, facebook_url)
+    VALUES (1, 'ShopSync Technologies', 'admin@shopsynctech.com', '+880 1719-272845', 'Moulvibazar, Sylhet, Bangladesh', 'San Francisco · London · Dhaka\nMoulvibazar, Sylhet, Bangladesh', 'Sat – Thu, 9:00 AM – 6:00 PM BST', 'Crafting premium software solutions that drive real business outcomes — from startups to Fortune 500.', 'https://web.facebook.com/shopsynctech')`);
+}
 
 // Seed the editable content with what the site shipped with (only when empty).
 if (db.get('SELECT COUNT(*) c FROM team_members').c === 0) {

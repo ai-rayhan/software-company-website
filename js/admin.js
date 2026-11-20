@@ -25,6 +25,7 @@
     $('tabSubs').classList.toggle('hidden', t.dataset.tab !== 'subs');
     $('tabTeam').classList.toggle('hidden', t.dataset.tab !== 'team');
     $('tabRoles').classList.toggle('hidden', t.dataset.tab !== 'roles');
+    $('tabInfo').classList.toggle('hidden', t.dataset.tab !== 'info');
   }));
 
   async function loadSummary() {
@@ -69,12 +70,13 @@
 
   /* ── Team & Careers management ───────────────────────── */
   const safePhoto = (p) => (/^assets\/images\/[\w\-\/.]+\.(jpe?g|png|webp)$/i.test(p || '') ? p : '');
+  const PERSON_ICON = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
   const state = { team: [], roles: [] };
 
   async function loadTeam() {
     const { rows } = await api('/api/admin/team'); state.team = rows;
     $('teamBody').innerHTML = rows.length ? rows.map((r) => `<tr data-id="${r.id}">
-      <td>${safePhoto(r.photo) ? `<img class="thumb" src="${esc(safePhoto(r.photo))}" alt="" />` : '<div class="thumb"></div>'}</td>
+      <td>${safePhoto(r.photo) ? `<img class="thumb" src="${esc(safePhoto(r.photo))}" alt="" />` : `<div class="thumb no-photo">${PERSON_ICON}</div>`}</td>
       <td><b>${esc(r.name)}</b><br><small>${esc(r.bio).slice(0, 80)}</small></td><td>${esc(r.role)}</td><td>${r.sort_order}</td>
       <td><span class="pill ${r.active ? 'on' : 'off'}">${r.active ? 'Visible' : 'Hidden'}</span></td>
       <td><button class="small-btn" data-act="edit">Edit</button><button class="small-btn del" data-act="del">Delete</button></td></tr>`).join('')
@@ -101,7 +103,14 @@
         if (el.type === 'checkbox') el.checked = row ? !!v : true;
         else if (v !== undefined && v !== null) el.value = v;
       });
-      if (kind === 'team') { const p = safePhoto(form.elements.photo.value); $('teamPreview').classList.toggle('hidden', !p); if (p) $('teamPreview').src = p; $('teamFile').value = ''; }
+      if (kind === 'team') {
+        const p = safePhoto(form.elements.photo.value);
+        $('teamPreview').classList.toggle('hidden', !p);
+        if (p) $('teamPreview').src = p;
+        $('teamNoPhoto').classList.toggle('hidden', !!p);
+        $('removePhotoBtn').classList.toggle('hidden', !p);
+        $('teamFile').value = '';
+      }
       dlg.showModal();
     };
     document.querySelector(`[data-new="${kind}"]`).addEventListener('click', () => open(null));
@@ -131,15 +140,63 @@
       const r = await fetch('/api/admin/upload', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': f.type }, body: f });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(d.error || 'Upload failed');
-      $('teamForm').elements.photo.value = d.path; $('teamPreview').src = d.path; $('teamPreview').classList.remove('hidden');
+      $('teamPhotoInput').value = d.path;
+      $('teamPreview').src = d.path;
+      $('teamPreview').classList.remove('hidden');
+      $('teamNoPhoto').classList.add('hidden');
+      $('removePhotoBtn').classList.remove('hidden');
     } catch (err) { $('teamErr').textContent = err.message; }
+  });
+
+  $('removePhotoBtn').addEventListener('click', () => {
+    $('teamPhotoInput').value = '';
+    $('teamFile').value = '';
+    $('teamPreview').classList.add('hidden');
+    $('teamPreview').src = '';
+    $('teamNoPhoto').classList.remove('hidden');
+    $('removePhotoBtn').classList.add('hidden');
+  });
+
+  /* ── Company Info management ─────────────────────────── */
+  async function loadInfo() {
+    try {
+      const { info } = await api('/api/admin/info');
+      if (!info) return;
+      const form = $('infoForm');
+      ['company_name', 'email', 'phone', 'address', 'presence', 'hours', 'tagline', 'facebook_url'].forEach((k) => {
+        if (form.elements[k]) form.elements[k].value = info[k] || '';
+      });
+    } catch (_) {}
+  }
+
+  $('infoForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('infoErr').textContent = '';
+    $('infoSuccess').classList.add('hidden');
+    const form = $('infoForm');
+    const body = {};
+    Array.from(form.elements).forEach((el) => {
+      if (el.name) body[el.name] = el.value.trim();
+    });
+    try {
+      const { info } = await api('/api/admin/info', { method: 'PUT', body: JSON.stringify(body) });
+      if (info) {
+        ['company_name', 'email', 'phone', 'address', 'presence', 'hours', 'tagline', 'facebook_url'].forEach((k) => {
+          if (form.elements[k]) form.elements[k].value = info[k] || '';
+        });
+      }
+      $('infoSuccess').classList.remove('hidden');
+      setTimeout(() => $('infoSuccess').classList.add('hidden'), 4000);
+    } catch (err) {
+      $('infoErr').textContent = err.message;
+    }
   });
 
   async function boot() {
     try {
       const me = await api('/api/admin/me');
       $('meEmail').textContent = me.email; show(true);
-      await Promise.all([loadSummary(), loadInquiries(), loadSubs(), loadTeam(), loadRoles()]);
+      await Promise.all([loadSummary(), loadInquiries(), loadSubs(), loadTeam(), loadRoles(), loadInfo()]);
     } catch (err) { show(false); }
   }
   boot();

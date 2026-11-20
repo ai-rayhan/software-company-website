@@ -47,6 +47,7 @@
 .card2 h4{font-family:var(--ff-head);font-size:1.25rem;letter-spacing:-.02em;margin-bottom:10px}
 .card2 p{color:var(--text2);line-height:1.75;font-size:.95rem}
 .person .av{width:84px;height:84px;border-radius:26px;display:grid;place-items:center;font-family:var(--ff-head);font-weight:700;font-size:1.6rem;color:#fff;margin-bottom:22px;transform:skewX(-6deg)}
+.person .av.no-photo svg{width:46px;height:46px;stroke-width:1.8;stroke:#fff}
 .person small{color:var(--o2);font-weight:700;font-size:.8rem;display:block;margin-bottom:12px}
 
 /* about */

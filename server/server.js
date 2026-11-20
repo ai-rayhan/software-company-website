@@ -282,11 +282,60 @@ app.post('/api/admin/upload', requireAdmin, sameOrigin, express.raw({ type: ['im
   else if (buf.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) ext = 'png';
   else if (buf.slice(0, 4).toString() === 'RIFF' && buf.slice(8, 12).toString() === 'WEBP') ext = 'webp';
   if (!ext) return fail(res, 'File is not a valid JPG, PNG or WebP image.');
-  const dir = path.join(__dirname, '..', 'assets', 'images', 'team', 'uploads');
+  const staticRoot = fs.existsSync(path.join(__dirname, '..', 'public_html'))
+    ? path.join(__dirname, '..', 'public_html')
+    : path.join(__dirname, '..');
+  const dir = path.join(staticRoot, 'assets', 'images', 'team', 'uploads');
   fs.mkdirSync(dir, { recursive: true });
   const name = crypto.randomBytes(8).toString('hex') + '.' + ext;
   fs.writeFileSync(path.join(dir, name), buf);
+  const altDir = path.join(__dirname, '..', 'assets', 'images', 'team', 'uploads');
+  if (dir !== altDir) {
+    try {
+      fs.mkdirSync(altDir, { recursive: true });
+      fs.writeFileSync(path.join(altDir, name), buf);
+    } catch (_) {}
+  }
   res.status(201).json({ ok: true, path: 'assets/images/team/uploads/' + name });
+});
+
+// Company info endpoints (public & admin)
+app.get('/api/info', (_req, res) => {
+  const row = db.get('SELECT company_name, email, phone, address, presence, hours, tagline, facebook_url, updated_at FROM company_info WHERE id = 1') || {};
+  res.json({ ok: true, info: row });
+});
+app.get('/api/admin/info', requireAdmin, (_req, res) => {
+  const row = db.get('SELECT * FROM company_info WHERE id = 1') || {};
+  res.json({ ok: true, info: row });
+});
+app.put('/api/admin/info', requireAdmin, sameOrigin, (req, res) => {
+  const b = req.body || {};
+  const email = String(b.email || '').trim().slice(0, 120);
+  const phone = String(b.phone || '').trim().slice(0, 60);
+  const address = String(b.address || '').trim().slice(0, 255);
+  const presence = String(b.presence || '').trim().slice(0, 255);
+  const hours = String(b.hours || '').trim().slice(0, 120);
+  const tagline = String(b.tagline || '').trim().slice(0, 500);
+  const facebook_url = String(b.facebook_url || '').trim().slice(0, 255);
+  const company_name = String(b.company_name || 'ShopSync Technologies').trim().slice(0, 120);
+
+  if (!email || !email.includes('@')) return fail(res, 'Valid email is required.');
+
+  db.run(`UPDATE company_info SET 
+    company_name = ?,
+    email = ?,
+    phone = ?,
+    address = ?,
+    presence = ?,
+    hours = ?,
+    tagline = ?,
+    facebook_url = ?,
+    updated_at = datetime('now')
+    WHERE id = 1`,
+    [company_name, email, phone, address, presence, hours, tagline, facebook_url]
+  );
+  const info = db.get('SELECT * FROM company_info WHERE id = 1');
+  res.json({ ok: true, info });
 });
 
 app.use('/api', (_req, res) => fail(res, 'Not found', 404));

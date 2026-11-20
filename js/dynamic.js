@@ -15,8 +15,11 @@
   var team = document.getElementById('teamGrid');
   if (team) load('/api/team').then(function (rows) {
     team.innerHTML = rows.map(function (m, i) {
-      var photo = PHOTO.test(m.photo || '') && m.photo.indexOf('..') < 0 ? '<img data-slot src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async">' : '';
-      return '<div class="card2 person reveal visible"><div class="av" style="background:' + PAL[i % PAL.length] + '">' + esc(initials(m.name)) + photo + '</div><h4>' + esc(m.name) + '</h4><small>' + esc(m.role) + '</small><p>' + esc(m.bio) + '</p></div>';
+      var hasPhoto = PHOTO.test(m.photo || '') && m.photo.indexOf('..') < 0;
+      var photo = hasPhoto
+        ? '<img data-slot src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async">'
+        : '<svg viewBox="0 0 24 24" class="person-icon" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.92)"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+      return '<div class="card2 person reveal visible"><div class="av' + (hasPhoto ? '' : ' no-photo') + '" style="background:' + PAL[i % PAL.length] + '">' + photo + '</div><h4>' + esc(m.name) + '</h4><small>' + esc(m.role) + '</small><p>' + esc(m.bio) + '</p></div>';
     }).join('');
     team.classList.add('visible'); done(team);
   }).catch(function () {});

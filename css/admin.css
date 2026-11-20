@@ -52,6 +52,15 @@ dialog::backdrop{background:rgba(10,12,11,.55)}
 label.check{flex-direction:row;align-items:center;gap:8px;font-weight:600}
 label.check input{width:auto}
 .photo-row{display:flex;align-items:center;gap:14px}
-.photo-row img{width:64px;height:64px;border-radius:14px;object-fit:cover}
+.photo-preview-box{width:64px;height:64px;flex-shrink:0}
+.photo-preview-box img{width:64px;height:64px;border-radius:14px;object-fit:cover}
+.photo-preview-box .thumb.no-photo{width:64px;height:64px;border-radius:14px}
+.thumb.no-photo{display:grid;place-items:center;background:#eae8e3;color:#8e8b85}
+.photo-actions{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
 .dlg-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px}
-@media(max-width:560px){.two{grid-template-columns:1fr}}
+.info-card{background:var(--card);border:1px solid var(--b);border-radius:16px;padding:24px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.info-grid .full{grid-column:1/-1}
+.info-grid textarea{border:1px solid var(--b);border-radius:10px;padding:10px 12px;font:inherit;resize:vertical}
+.success-msg{background:#e4efe5;color:#2e6b3a;padding:12px 16px;border-radius:10px;font-size:.88rem;font-weight:600;margin-top:14px}
+@media(max-width:560px){.two,.info-grid{grid-template-columns:1fr}}

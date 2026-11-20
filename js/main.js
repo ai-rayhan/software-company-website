@@ -210,6 +210,74 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   calculateEstimate();
 })();
 
+/* ── Dynamic Company Info Sync ─────────────────── */
+(function () {
+  fetch('/api/info', { cache: 'default' })
+    .then(function (res) { return res.ok ? res.json() : null; })
+    .then(function (data) {
+      if (!data || !data.ok || !data.info) return;
+      var info = data.info;
+
+      if (info.email) {
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+          a.href = 'mailto:' + info.email;
+          if (a.textContent.includes('@')) a.textContent = info.email;
+        });
+        document.querySelectorAll('[data-company="email"]').forEach(function (el) {
+          el.textContent = info.email;
+          if (el.tagName === 'A') el.href = 'mailto:' + info.email;
+        });
+      }
+
+      if (info.phone) {
+        var cleanTel = info.phone.replace(/[^\d+]/g, '');
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+          a.href = 'tel:' + cleanTel;
+          if (/\+?\d[\d\s-]+/.test(a.textContent)) a.textContent = info.phone;
+        });
+        document.querySelectorAll('[data-company="phone"]').forEach(function (el) {
+          el.textContent = info.phone;
+          if (el.tagName === 'A') el.href = 'tel:' + cleanTel;
+        });
+      }
+
+      if (info.facebook_url) {
+        document.querySelectorAll('a[href*="facebook.com"], [data-company="facebook"]').forEach(function (a) {
+          a.href = info.facebook_url;
+        });
+      }
+
+      if (info.tagline) {
+        document.querySelectorAll('.footer-brand p, [data-company="tagline"]').forEach(function (el) {
+          el.textContent = info.tagline;
+        });
+      }
+
+      if (info.hours) {
+        document.querySelectorAll('[data-company="hours"]').forEach(function (el) {
+          el.textContent = info.hours;
+        });
+      }
+
+      if (info.presence || info.address) {
+        var presHtml = String(info.presence || info.address).replace(/\n/g, '<br>');
+        document.querySelectorAll('[data-company="presence"]').forEach(function (el) {
+          el.innerHTML = presHtml;
+        });
+        document.querySelectorAll('[data-company="address"]').forEach(function (el) {
+          el.textContent = info.address;
+        });
+      }
+
+      if (info.company_name) {
+        document.querySelectorAll('[data-company="name"]').forEach(function (el) {
+          el.textContent = info.company_name;
+        });
+      }
+    })
+    .catch(function () {});
+})();
+
 /* Initialize Lucide icons if available */
 if (window.lucide) {
   window.lucide.createIcons();

@@ -32,6 +32,7 @@
         <button class="tab" data-tab="subs">Subscribers</button>
         <button class="tab" data-tab="team">Team</button>
         <button class="tab" data-tab="roles">Careers</button>
+        <button class="tab" data-tab="info">Company Info</button>
       </div>
       <section id="tabInq">
         <div class="filters">
@@ -66,6 +67,29 @@
           <tbody id="roleBody"></tbody>
         </table></div>
       </section>
+      <section id="tabInfo" class="hidden">
+        <form id="infoForm" class="info-card">
+          <div class="bar">
+            <div>
+              <h2 style="font-size:1.25rem;font-weight:700">Company Information</h2>
+              <p class="hint">Manage contact details, address, business hours, and social profiles shown across the website.</p>
+            </div>
+            <button class="btn" type="submit">Save Changes</button>
+          </div>
+          <div class="info-grid">
+            <label>Company Name<input name="company_name" required maxlength="120" /></label>
+            <label>Contact Email<input type="email" name="email" required maxlength="120" /></label>
+            <label>Phone / WhatsApp<input name="phone" maxlength="60" placeholder="+880 1719-272845" /></label>
+            <label>Working Hours<input name="hours" maxlength="120" placeholder="e.g. Sat – Thu, 9:00 AM – 6:00 PM BST" /></label>
+            <label class="full">Office Address<input name="address" maxlength="255" placeholder="e.g. Moulvibazar, Sylhet, Bangladesh" /></label>
+            <label class="full">Global Presence / Multi-location text<textarea name="presence" rows="2" maxlength="255" placeholder="e.g. San Francisco · London · Dhaka&#10;Moulvibazar, Sylhet, Bangladesh"></textarea></label>
+            <label class="full">Facebook Page URL<input type="url" name="facebook_url" maxlength="255" placeholder="https://web.facebook.com/shopsynctech" /></label>
+            <label class="full">Footer Tagline / Bio<textarea name="tagline" rows="2" maxlength="500"></textarea></label>
+          </div>
+          <div class="err" id="infoErr"></div>
+          <div class="success-msg hidden" id="infoSuccess">✓ Company information saved and updated successfully!</div>
+        </form>
+      </section>
     </main>
   </div>
 
@@ -74,10 +98,19 @@
     <label>Full name<input name="name" required maxlength="120" /></label>
     <label>Role / title<input name="role" required maxlength="160" /></label>
     <label>Short bio<textarea name="bio" rows="3" maxlength="600"></textarea></label>
-    <label>Photo
-      <div class="photo-row"><img id="teamPreview" alt="" class="hidden" /><input type="file" id="teamFile" accept="image/jpeg,image/png,image/webp" /></div>
-      <small>Square JPG, PNG or WebP, up to 3 MB. 800 × 800 px is ideal.</small>
-      <input type="hidden" name="photo" />
+    <label>Photo (Optional)
+      <div class="photo-row">
+        <div class="photo-preview-box">
+          <img id="teamPreview" alt="" class="hidden" />
+          <div id="teamNoPhoto" class="thumb no-photo"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        </div>
+        <div class="photo-actions">
+          <input type="file" id="teamFile" accept="image/jpeg,image/png,image/webp" />
+          <button type="button" id="removePhotoBtn" class="small-btn hidden">Remove photo</button>
+        </div>
+      </div>
+      <small>Optional. Square JPG, PNG or WebP, up to 3 MB. Leave empty to use person icon.</small>
+      <input type="hidden" name="photo" id="teamPhotoInput" />
     </label>
     <div class="two"><label>Display order<input name="sort_order" type="number" min="0" max="999" value="0" /></label>
     <label class="check"><input type="checkbox" name="active" checked /> Visible on website</label></div>
