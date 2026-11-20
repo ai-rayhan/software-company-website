@@ -30,6 +30,8 @@
       <div class="tabs">
         <button class="tab active" data-tab="inq">Inquiries</button>
         <button class="tab" data-tab="subs">Subscribers</button>
+        <button class="tab" data-tab="team">Team</button>
+        <button class="tab" data-tab="roles">Careers</button>
       </div>
       <section id="tabInq">
         <div class="filters">
@@ -50,8 +52,51 @@
           <tbody id="subBody"></tbody>
         </table></div>
       </section>
+      <section id="tabTeam" class="hidden">
+        <div class="bar"><p class="hint">Shown on the About page, in this order. Hidden members are not published.</p><button class="btn" data-new="team">+ Add member</button></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Photo</th><th>Name</th><th>Role</th><th>Order</th><th>Status</th><th></th></tr></thead>
+          <tbody id="teamBody"></tbody>
+        </table></div>
+      </section>
+      <section id="tabRoles" class="hidden">
+        <div class="bar"><p class="hint">Shown on the Careers page. "Apply now" opens the contact form for that role.</p><button class="btn" data-new="roles">+ Add role</button></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Role</th><th>Department</th><th>Location</th><th>Type</th><th>Order</th><th>Status</th><th></th></tr></thead>
+          <tbody id="roleBody"></tbody>
+        </table></div>
+      </section>
     </main>
   </div>
+
+  <dialog id="teamDlg"><form id="teamForm" class="dlg">
+    <h2 id="teamTitle">Team member</h2>
+    <label>Full name<input name="name" required maxlength="120" /></label>
+    <label>Role / title<input name="role" required maxlength="160" /></label>
+    <label>Short bio<textarea name="bio" rows="3" maxlength="600"></textarea></label>
+    <label>Photo
+      <div class="photo-row"><img id="teamPreview" alt="" class="hidden" /><input type="file" id="teamFile" accept="image/jpeg,image/png,image/webp" /></div>
+      <small>Square JPG, PNG or WebP, up to 3 MB. 800 × 800 px is ideal.</small>
+      <input type="hidden" name="photo" />
+    </label>
+    <div class="two"><label>Display order<input name="sort_order" type="number" min="0" max="999" value="0" /></label>
+    <label class="check"><input type="checkbox" name="active" checked /> Visible on website</label></div>
+    <div class="err" id="teamErr"></div>
+    <div class="dlg-actions"><button type="button" class="btn ghost" data-close>Cancel</button><button class="btn" type="submit">Save</button></div>
+  </form></dialog>
+
+  <dialog id="roleDlg"><form id="roleForm" class="dlg">
+    <h2 id="roleTitle">Career role</h2>
+    <label>Job title<input name="title" required maxlength="160" /></label>
+    <div class="two"><label>Department<input name="department" maxlength="80" placeholder="Engineering" /></label>
+    <label>Location<input name="location" maxlength="100" placeholder="Remote / Dhaka" /></label></div>
+    <label>Employment type<select name="type"><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Internship</option></select></label>
+    <label>Short description<textarea name="description" rows="3" maxlength="600"></textarea></label>
+    <div class="two"><label>Display order<input name="sort_order" type="number" min="0" max="999" value="0" /></label>
+    <label class="check"><input type="checkbox" name="active" checked /> Open (visible on website)</label></div>
+    <div class="err" id="roleErr"></div>
+    <div class="dlg-actions"><button type="button" class="btn ghost" data-close>Cancel</button><button class="btn" type="submit">Save</button></div>
+  </form></dialog>
   <script src="js/admin.js"></script>
 </body>
 </html>

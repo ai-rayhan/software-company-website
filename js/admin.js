@@ -23,6 +23,8 @@
     document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x === t));
     $('tabInq').classList.toggle('hidden', t.dataset.tab !== 'inq');
     $('tabSubs').classList.toggle('hidden', t.dataset.tab !== 'subs');
+    $('tabTeam').classList.toggle('hidden', t.dataset.tab !== 'team');
+    $('tabRoles').classList.toggle('hidden', t.dataset.tab !== 'roles');
   }));
 
   async function loadSummary() {
@@ -65,11 +67,79 @@
   let t; $('search').addEventListener('input', () => { clearTimeout(t); t = setTimeout(loadInquiries, 250); });
   $('statusFilter').addEventListener('change', loadInquiries);
 
+  /* ── Team & Careers management ───────────────────────── */
+  const safePhoto = (p) => (/^assets\/images\/[\w\-\/.]+\.(jpe?g|png|webp)$/i.test(p || '') ? p : '');
+  const state = { team: [], roles: [] };
+
+  async function loadTeam() {
+    const { rows } = await api('/api/admin/team'); state.team = rows;
+    $('teamBody').innerHTML = rows.length ? rows.map((r) => `<tr data-id="${r.id}">
+      <td>${safePhoto(r.photo) ? `<img class="thumb" src="${esc(safePhoto(r.photo))}" alt="" />` : '<div class="thumb"></div>'}</td>
+      <td><b>${esc(r.name)}</b><br><small>${esc(r.bio).slice(0, 80)}</small></td><td>${esc(r.role)}</td><td>${r.sort_order}</td>
+      <td><span class="pill ${r.active ? 'on' : 'off'}">${r.active ? 'Visible' : 'Hidden'}</span></td>
+      <td><button class="small-btn" data-act="edit">Edit</button><button class="small-btn del" data-act="del">Delete</button></td></tr>`).join('')
+      : '<tr><td colspan="6" class="empty">No team members yet.</td></tr>';
+  }
+  async function loadRoles() {
+    const { rows } = await api('/api/admin/roles'); state.roles = rows;
+    $('roleBody').innerHTML = rows.length ? rows.map((r) => `<tr data-id="${r.id}">
+      <td><b>${esc(r.title)}</b><br><small>${esc(r.description).slice(0, 80)}</small></td><td>${esc(r.department)}</td><td>${esc(r.location)}</td><td>${esc(r.type)}</td><td>${r.sort_order}</td>
+      <td><span class="pill ${r.active ? 'on' : 'off'}">${r.active ? 'Open' : 'Closed'}</span></td>
+      <td><button class="small-btn" data-act="edit">Edit</button><button class="small-btn del" data-act="del">Delete</button></td></tr>`).join('')
+      : '<tr><td colspan="7" class="empty">No roles yet.</td></tr>';
+  }
+
+  function setupCrud(kind, dlgId, formId, errId, titleId, label, endpoint, reload, bodyId) {
+    const dlg = $(dlgId), form = $(formId); let editId = null;
+    const open = (row) => {
+      editId = row ? row.id : null; $(errId).textContent = ''; form.reset();
+      $(titleId).textContent = (row ? 'Edit ' : 'Add ') + label;
+      const defaults = { sort_order: state[kind].length, active: 1 };
+      Array.from(form.elements).forEach((el) => {
+        if (!el.name) return;
+        const v = row ? row[el.name] : defaults[el.name];
+        if (el.type === 'checkbox') el.checked = row ? !!v : true;
+        else if (v !== undefined && v !== null) el.value = v;
+      });
+      if (kind === 'team') { const p = safePhoto(form.elements.photo.value); $('teamPreview').classList.toggle('hidden', !p); if (p) $('teamPreview').src = p; $('teamFile').value = ''; }
+      dlg.showModal();
+    };
+    document.querySelector(`[data-new="${kind}"]`).addEventListener('click', () => open(null));
+    dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+    $(bodyId).addEventListener('click', async (e) => {
+      const act = e.target.dataset.act; if (!act) return;
+      const id = +e.target.closest('tr').dataset.id;
+      if (act === 'edit') open(state[kind].find((r) => r.id === id));
+      if (act === 'del' && confirm('Delete this entry permanently?')) { await api(`${endpoint}/${id}`, { method: 'DELETE' }); reload(); }
+    });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); $(errId).textContent = '';
+      const body = {}; Array.from(form.elements).forEach((el) => { if (el.name) body[el.name] = el.type === 'checkbox' ? el.checked : el.value; });
+      try {
+        await api(editId ? `${endpoint}/${editId}` : endpoint, { method: editId ? 'PUT' : 'POST', body: JSON.stringify(body) });
+        dlg.close(); reload();
+      } catch (err) { $(errId).textContent = err.message; }
+    });
+  }
+  setupCrud('team', 'teamDlg', 'teamForm', 'teamErr', 'teamTitle', 'team member', '/api/admin/team', loadTeam, 'teamBody');
+  setupCrud('roles', 'roleDlg', 'roleForm', 'roleErr', 'roleTitle', 'career role', '/api/admin/roles', loadRoles, 'roleBody');
+
+  $('teamFile').addEventListener('change', async (e) => {
+    const f = e.target.files[0]; if (!f) return; $('teamErr').textContent = '';
+    if (f.size > 3 * 1024 * 1024) { $('teamErr').textContent = 'Image is larger than 3 MB.'; return; }
+    try {
+      const r = await fetch('/api/admin/upload', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': f.type }, body: f });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.error || 'Upload failed');
+      $('teamForm').elements.photo.value = d.path; $('teamPreview').src = d.path; $('teamPreview').classList.remove('hidden');
+    } catch (err) { $('teamErr').textContent = err.message; }
+  });
+
   async function boot() {
     try {
       const me = await api('/api/admin/me');
       $('meEmail').textContent = me.email; show(true);
-      await Promise.all([loadSummary(), loadInquiries(), loadSubs()]);
+      await Promise.all([loadSummary(), loadInquiries(), loadSubs(), loadTeam(), loadRoles()]);
     } catch (err) { show(false); }
   }
   boot();

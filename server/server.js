@@ -67,7 +67,7 @@ app.use(helmet({
   },
 }));
 app.use(compression());
-app.use(express.json({ limit: '50kb' }));
+app.use(express.json({ limit: '100kb' }));
 app.use(cookieParser());
 
 const formLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 12, standardHeaders: true, legacyHeaders: false,
@@ -215,6 +215,75 @@ app.get('/api/admin/export.csv', requireAdmin, (_req, res) => {
   const head = ['id', 'created_at', 'name', 'email', 'company', 'service', 'budget', 'timeline', 'status', 'source', 'message'];
   const csv = [head.join(','), ...rows.map(r => head.map(h => csvCell(r[h])).join(','))].join('\n');
   res.type('text/csv').attachment('inquiries.csv').send(csv);
+});
+
+
+/* ── Editable content: team + careers ───────────────────── */
+const PHOTO_RE = /^assets\/images\/[\w\-\/.]+\.(jpe?g|png|webp)$/i;
+const cleanPhoto = (v) => { const p = str(v, 300); return PHOTO_RE.test(p) && !p.includes('..') ? p : ''; };
+const clampOrder = (v) => Math.max(0, Math.min(999, parseInt(v, 10) || 0));
+const flag = (v) => (v === false || v === 0 || v === '0' ? 0 : 1);
+const cleanTeam = (b) => ({ name: str(b.name, 120), role: str(b.role, 160), bio: str(b.bio, 600), photo: cleanPhoto(b.photo), sort_order: clampOrder(b.sort_order), active: flag(b.active) });
+const ROLE_TYPES = ['Full-time', 'Part-time', 'Contract', 'Internship'];
+const cleanRole = (b) => ({
+  title: str(b.title, 160), department: str(b.department, 80), location: str(b.location, 100),
+  type: ROLE_TYPES.includes(b.type) ? b.type : 'Full-time', description: str(b.description, 600),
+  sort_order: clampOrder(b.sort_order), active: flag(b.active),
+});
+
+app.get('/api/team', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.json({ ok: true, rows: db.all('SELECT id,name,role,bio,photo FROM team_members WHERE active=1 ORDER BY sort_order, id') });
+});
+app.get('/api/careers', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.json({ ok: true, rows: db.all('SELECT id,title,department,location,type,description FROM career_roles WHERE active=1 ORDER BY sort_order, id') });
+});
+
+app.get('/api/admin/team', requireAdmin, (_req, res) => res.json({ ok: true, rows: db.all('SELECT * FROM team_members ORDER BY sort_order, id') }));
+app.post('/api/admin/team', requireAdmin, sameOrigin, (req, res) => {
+  const t = cleanTeam(req.body || {});
+  if (t.name.length < 2 || t.role.length < 2) return fail(res, 'Name and role are required.');
+  const r = db.run('INSERT INTO team_members (name,role,bio,photo,sort_order,active) VALUES (?,?,?,?,?,?)', [t.name, t.role, t.bio, t.photo, t.sort_order, t.active]);
+  res.status(201).json({ ok: true, id: r.lastInsertRowid });
+});
+app.put('/api/admin/team/:id', requireAdmin, sameOrigin, (req, res) => {
+  const t = cleanTeam(req.body || {});
+  if (t.name.length < 2 || t.role.length < 2) return fail(res, 'Name and role are required.');
+  db.run('UPDATE team_members SET name=?,role=?,bio=?,photo=?,sort_order=?,active=? WHERE id=?', [t.name, t.role, t.bio, t.photo, t.sort_order, t.active, +req.params.id]);
+  res.json({ ok: true });
+});
+app.delete('/api/admin/team/:id', requireAdmin, sameOrigin, (req, res) => { db.run('DELETE FROM team_members WHERE id=?', [+req.params.id]); res.json({ ok: true }); });
+
+app.get('/api/admin/roles', requireAdmin, (_req, res) => res.json({ ok: true, rows: db.all('SELECT * FROM career_roles ORDER BY sort_order, id') }));
+app.post('/api/admin/roles', requireAdmin, sameOrigin, (req, res) => {
+  const r = cleanRole(req.body || {});
+  if (r.title.length < 3) return fail(res, 'Role title is required.');
+  const x = db.run('INSERT INTO career_roles (title,department,location,type,description,sort_order,active) VALUES (?,?,?,?,?,?,?)', [r.title, r.department, r.location, r.type, r.description, r.sort_order, r.active]);
+  res.status(201).json({ ok: true, id: x.lastInsertRowid });
+});
+app.put('/api/admin/roles/:id', requireAdmin, sameOrigin, (req, res) => {
+  const r = cleanRole(req.body || {});
+  if (r.title.length < 3) return fail(res, 'Role title is required.');
+  db.run('UPDATE career_roles SET title=?,department=?,location=?,type=?,description=?,sort_order=?,active=? WHERE id=?', [r.title, r.department, r.location, r.type, r.description, r.sort_order, r.active, +req.params.id]);
+  res.json({ ok: true });
+});
+app.delete('/api/admin/roles/:id', requireAdmin, sameOrigin, (req, res) => { db.run('DELETE FROM career_roles WHERE id=?', [+req.params.id]); res.json({ ok: true }); });
+
+// Photo upload: raw image body (jpeg/png/webp, max 3 MB), verified by magic bytes.
+app.post('/api/admin/upload', requireAdmin, sameOrigin, express.raw({ type: ['image/jpeg', 'image/png', 'image/webp'], limit: '3mb' }), (req, res) => {
+  const buf = req.body;
+  if (!Buffer.isBuffer(buf) || buf.length < 12) return fail(res, 'Send a JPG, PNG or WebP image (max 3 MB).');
+  let ext = null;
+  if (buf[0] === 0xff && buf[1] === 0xd8) ext = 'jpg';
+  else if (buf.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) ext = 'png';
+  else if (buf.slice(0, 4).toString() === 'RIFF' && buf.slice(8, 12).toString() === 'WEBP') ext = 'webp';
+  if (!ext) return fail(res, 'File is not a valid JPG, PNG or WebP image.');
+  const dir = path.join(__dirname, '..', 'assets', 'images', 'team', 'uploads');
+  fs.mkdirSync(dir, { recursive: true });
+  const name = crypto.randomBytes(8).toString('hex') + '.' + ext;
+  fs.writeFileSync(path.join(dir, name), buf);
+  res.status(201).json({ ok: true, path: 'assets/images/team/uploads/' + name });
 });
 
 app.use('/api', (_req, res) => fail(res, 'Not found', 404));
